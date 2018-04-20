@@ -2,7 +2,7 @@
 
 # give prompt for wires
 
-# receive prompt
+# receive prompt (toLowerCase)
 input = ''
 
 # parse colors
@@ -25,7 +25,7 @@ if len(wires)==3:
 elif len(wires)==4:
     if serial_num=='':
         # prompt for serial num
-        # receive serial num
+        # receive serial num toLowerCase
     if last_digit==None:
         last_digit = int(serial_num[-1:])
     
@@ -39,3 +39,22 @@ elif len(wires)==4:
         print("last")
     else
         print("2nd")
+
+elif len(wires)==5:
+    if serial_num=='':
+        # prompt for serial num
+        # receive serial num toLowerCase
+    if last_digit==None:
+        last_digit = int(serial_num[-1:])
+
+    if wires[-1]=='k' and last_digit%2==1:
+        print("4th")
+    elif wires.count('r')==1 and wires.count('y')>1:
+        print("1st")
+    elif wires.count('k')==0:
+        print("2nd")
+    else
+        print("1st")
+
+
+
