@@ -36,3 +36,13 @@ activated and probably way better than this one.
 - When prompted, type the name of the module.
 - The input is not case-sensitive, but make sure to use the formats as described below.
 
+### Wires (Simple)
+- When the prompt appears, enter the colors of the wires in top-down order, separated by spaces.
+- Pros who want to break a speed challenge can enter the color codes of the wires.
+	- blue: B
+	- red: R
+	- yellow: Y
+	- black: K
+	- white: W
+- If the prompt asks for the serial number simply enter it as shown on the bomb. 
+
