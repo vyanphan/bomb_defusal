@@ -1,5 +1,5 @@
-# Keep Talking and Nobody Explodes
-==================================
+Keep Talking and Nobody Explodes
+=================================
 
 ## About
 
@@ -39,6 +39,7 @@ activated and probably way better than this one.
 ### Wires (Simple)
 - When the prompt appears, enter the colors of the wires in top-down order, separated by spaces.
 - Pros who want to break a speed challenge can enter the color codes of the wires.
+
 	| Color  | Code |
 	|--------|------|
 	| Blue   | B    |
@@ -46,5 +47,6 @@ activated and probably way better than this one.
 	| Yellow | Y    |
 	| Black  | K    |
 	| White  | W    |
+	
 - If the prompt asks for the serial number simply enter it as shown on the bomb. 
 
