@@ -56,5 +56,19 @@ elif len(wires)==5:
     else
         print("1st")
 
+elif len(wires)==6:
+    if serial_num=='':
+        # prompt for serial num
+        # receive serial num toLowerCase
+    if last_digit==None:
+        last_digit = int(serial_num[-1:])
 
+    if wires.count('y')==0 and last_digit%2==1:
+        print("3rd")
+    elif wires.count('y')==1 and wires.count('w')>1:
+        print("4th")
+    elif wires.count('r')==0:
+        print("last")
+    else
+        print("4th")
 
