@@ -39,10 +39,12 @@ activated and probably way better than this one.
 ### Wires (Simple)
 - When the prompt appears, enter the colors of the wires in top-down order, separated by spaces.
 - Pros who want to break a speed challenge can enter the color codes of the wires.
-	- blue: B
-	- red: R
-	- yellow: Y
-	- black: K
-	- white: W
+	| Color  | Code |
+	|--------|------|
+	| Blue   | B    |
+	| Red    | R    |
+	| Yellow | Y    |
+	| Black  | K    |
+	| White  | W    |
 - If the prompt asks for the serial number simply enter it as shown on the bomb. 
 
