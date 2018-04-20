@@ -8,10 +8,9 @@ input = ''
 # parse colors
 
 
-
-
 wires = []
 serial_num = ''
+last_digit = None
 
 if len(wires)==3:
 	if 'r' not in wires:
@@ -22,3 +21,21 @@ if len(wires)==3:
         print("last blue")
     else
         print("last")
+
+elif len(wires)==4:
+    if serial_num=='':
+        # prompt for serial num
+        # receive serial num
+    if last_digit==None:
+        last_digit = int(serial_num[-1:])
+    
+    if wires.count('r')>1 and last_digit%2==1:
+        print("last red")
+    elif wires[-1]=='y' and wires.count('r')==0:
+        print("1st")
+    elif wires.count('b')==1:
+        print("1st")
+    elif wires.count('y')>1:
+        print("last")
+    else
+        print("2nd")
