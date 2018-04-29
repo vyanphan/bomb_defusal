@@ -4,7 +4,7 @@ import sys
 syns_tbl = {'inverted':  {'inverted', 'reverse', 'upside', 'down', 'upside-down'}, \
             'backwards': {'backwards', 'reverse', 'inverted'},                     \
             'line':      {'line', 'stick', 'beard', 't', 'slash', 'bar', 'cross'}, \
-            'hook':      {'hook', 'curl', 'tail'},                                 \
+            'hook':      {'hook', 'curl', 'tail', 'beard'},                        \
             'snake':     {'snake', 'dragon', 'worm', 'squiggly', 'funky'},         \
             'dot':       {'dot', 'dots', 'point', 'period'},                       \
             'curly':     {'curly', 'cursive', 'fancy', 'script'},                  \
@@ -16,10 +16,10 @@ help_tbl = [
             ('y'  , 'lambda', 'inverted', 'line', 'greek'),                     \
             ('Y'  , 'y', 'psi', 'trident', 'pitchfork', 'greek'),               \
             ('U'  , 'omega', 'u', 'horseshoe', 'greek'),                        \
-            ('W'  , 'w', 'butt', 'pumpkin', 'comma', 'greek', 'omega'),         \
+            ('W'  , 'w', 'butt', 'pumpkin', 'comma', 'greek'),                  \
             (),                                                                 \
-            ('C.' , 'c', 'dot', 'forwards', 'greek', 'lunate', 'sigma'),        \
-            ('.)' , 'c', 'dot', 'backwards', 'greek', 'lunate', 'sigma'),       \
+            ('C.' , 'c', 'c.', 'dot', 'forwards', 'greek', 'lunate', 'sigma'),  \
+            ('.)' , 'c', 'c.', 'dot', 'backwards', 'greek', 'lunate', 'sigma'), \
             ('O'  , 'o', 'line', 'balloon', 'greek', 'koppa'),                  \
             ('Z'  , 'z', 'lightning', 'snake', 'zigzag', 'greek', 'koppa'),     \
             ('H'  , 'h', 'curly', 'greek', 'kai'),                              \
@@ -33,8 +33,8 @@ help_tbl = [
             ('o'  , 'curly', 'cyrillic', 'hook'),                               \
             ('6'  , 'flat', 'cyrillic', 'be'),                                  \
             ('b'  , 'line', 'bt', 'cyrillic', 'yat'),                           \
-            ('3'  , 'hook', 'cyrillic', 'komi', 'dzje'),                        \
-            ('3'  , 'antennae', 'hook', 'snake', 'cyrillic', 'ksi'),            \
+            ('3'  , 'melted', 'hook', 'cyrillic', 'komi', 'dzje'),              \
+            ('3(' , '3', 'antennae', 'hook', 'snake', 'cyrillic', 'ksi'),       \
             ('='  , 'not', 'equals', 'railroad', 'line', 'bars', 'cyrillic'),   \
             (),                                                                 \
             ('?'  , 'question', 'mark', 'inverted'),                            \
@@ -44,10 +44,12 @@ help_tbl = [
             ('P'  , 'p', 'backwards', 'pilcrow', 'paragraph'),                  \
             (':)' , 'smiley', 'face', 'tongue', 'arabic', 'teh', '2', 'dot')]
 
-symb_tbl = [['O', 'A', 'y', 'Z', 'cat', 'H', '.)'], \
-            [], \
-            [], \
-            []]
+symb_tbl = [['O', 'A' , 'y' , 'Z'  , 'cat', 'H' , '.)'], \
+            ['E', 'O' , '.)', 'o'  , '*'  , 'H' , '?' ], \
+            ['c', 'W' , 'o' , 'K'  , '3'  , 'y' , '*' ], \
+            ['6', 'P' , 'b' , 'cat', 'K'  , '?' , ':)'], \
+            ['Y', ':)', 'b' , 'C.' , 'P'  , '3(', '**'], \
+            ['6', 'E' , '=' , 'ae' , 'Y'  , 'N' , 'U' ]]
 
 def parse_input(user_input):
     symbols = user_input.split(' ')
@@ -85,9 +87,10 @@ def symbols_help(search):
                         result[symbol] += 1
                     else:
                         result[symbol] = 1
-        maxMatches = max(result.values())
-        for symbol in [s for s in result if result[s]==maxMatches]:
-            print("    " + symbol[0] + '\t\t' + ' '.join(symbol))
+        if len(result)>0:
+            maxMatches = max(result.values())
+            for symbol in [s for s in result if result[s]==maxMatches]:
+                print("    " + symbol[0] + '\t\t' + ' '.join(symbol))
 
 def prompt_symbols():
     global serial_num
