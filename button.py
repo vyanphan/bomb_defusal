@@ -53,14 +53,14 @@ def prompt_button():
     quit = False
     while not quit:
         user_input = input("> Color Label:\t").lower()
-        if user_input == "help":
+        if user_input == "q":
+            quit = True
+        elif user_input == "help":
             print("    Red      r")
             print("    Blue     b")
             print("    Yellow   y")
             print("    White    w")
             print("    Black    k")
-        elif user_input == "q":
-            quit = True
         elif user_input == "reset":
             batteries = None
             indicator = None
