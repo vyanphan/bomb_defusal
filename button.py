@@ -5,8 +5,10 @@ batteries = None
 
 def held_button():
     print("  Hold the button and release when:")
-
-    print("  Blue\t")
+    print("    Color\tTimer has _ in any position")
+    print("    Blue\t4")
+    print("    Yellow\t5")
+    print("    Other\t1")
 
 def prompt_button():
     global batteries
