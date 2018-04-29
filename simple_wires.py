@@ -71,7 +71,11 @@ def prompt_wires():
     while not quit:
         user_input = input("> Color codes:\t").lower()
         if user_input=="help":
-            print("  Red\tr\n  Blue\tb\n  Yellow\ty\n  White\tw\n  Black\tk")
+            print("    Red      r")
+            print("    Blue     b")
+            print("    Yellow   y")
+            print("    White    w")
+            print("    Black    k")
         elif user_input=="q":
             quit = True
         elif user_input=="reset":
