@@ -92,6 +92,12 @@ def symbols_help(search):
             for symbol in [s for s in result if result[s]==maxMatches]:
                 print("    " + symbol[0] + '\t\t' + ' '.join(symbol))
 
+def symbols_solve(symbols):
+    for slist in symb_tbl:
+        if sum([1 for s in symbols if s in slist])==4:
+            return [sl for sl in slist if sl in symbols]
+    return -1
+
 def prompt_symbols():
     global serial_num
     global last_digit
@@ -104,7 +110,11 @@ def prompt_symbols():
         elif symbols==None or len(symbols)!=4:
             pass
         else:
-            print(symbols)
+            ans = symbols_solve(symbols)
+            if ans==-1:
+                print("Incorrect symbol code.")
+            else:
+                print(' '.join(ans))
         print()
 
 print("Symbols")
