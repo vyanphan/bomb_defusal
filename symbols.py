@@ -1,62 +1,67 @@
 #!/usr/bin/env python3
 import sys
 
-synonyms_tbl = {'inverted':  ('inverted', 'reverse', 'upside', 'down', 'upside-down'), \
-                'backwards': ('backwards', 'reverse', 'inverted'),                     \
-                'line':      ('line', 'stick', 'beard', 't', 'slash', 'bar', 'cross'), \
-                'hook':      ('hook', 'curl', 'tail'),                                 \
-                'snake':     ('snake', 'dragon', 'worm', 'squiggly', 'funky'),         \
-                'dot':       ('dot', 'dots', 'point', 'period'),                       \
-                'curly':     ('curly', 'cursive', 'fancy', 'script'),                  \
-                '2':         ('2', 'two'),                                             \
-                '3':         ('3', 'three')}
+syns_tbl = {'inverted':  {'inverted', 'reverse', 'upside', 'down', 'upside-down'}, \
+            'backwards': {'backwards', 'reverse', 'inverted'},                     \
+            'line':      {'line', 'stick', 'beard', 't', 'slash', 'bar', 'cross'}, \
+            'hook':      {'hook', 'curl', 'tail'},                                 \
+            'snake':     {'snake', 'dragon', 'worm', 'squiggly', 'funky'},         \
+            'dot':       {'dot', 'dots', 'point', 'period'},                       \
+            'curly':     {'curly', 'cursive', 'fancy', 'script'},                  \
+            '2':         {'2', 'two'},                                             \
+            '3':         {'3', 'three'}}
 
 help_tbl = [
-            ('ae' , 'a', 'e', 'Greek'),                                         \
-            ('y'  , 'lambda', 'inverted', 'line', 'Greek'),                     \
-            ('Y'  , 'psi', 'trident', 'pitchfork', 'Greek'),                    \
-            ('U'  , 'omega', 'horseshoe', 'Greek'),                             \
-            ('W'  , 'butt', 'pumpkin', 'comma', 'Greek', 'omega'),              \
+            ('ae' , 'a', 'e', 'greek'),                                         \
+            ('y'  , 'lambda', 'inverted', 'line', 'greek'),                     \
+            ('Y'  , 'y', 'psi', 'trident', 'pitchfork', 'greek'),               \
+            ('U'  , 'omega', 'u', 'horseshoe', 'greek'),                        \
+            ('W'  , 'w', 'butt', 'pumpkin', 'comma', 'greek', 'omega'),         \
             (),                                                                 \
-            ('C.' , 'C', 'dot', 'forwards', 'Greek', 'lunate', 'sigma'),        \
-            ('.)' , 'C', 'dot', 'backwards', 'Greek', 'lunate', 'sigma'),       \
-            ('O'  , 'line', 'balloon', 'Greek', 'koppa'),                       \
-            ('Z'  , 'lightning', 'snake', 'zigzag', 'Greek', 'koppa'),          \
-            ('H'  , 'curly', 'Greek', 'kai'),                                   \
+            ('C.' , 'c', 'C', 'dot', 'forwards', 'greek', 'lunate', 'sigma'),   \
+            ('.)' , 'c', 'C', 'dot', 'backwards', 'greek', 'lunate', 'sigma'),  \
+            ('O'  , 'o', 'line', 'balloon', 'greek', 'koppa'),                  \
+            ('Z'  , 'z', 'lightning', 'snake', 'zigzag', 'greek', 'koppa'),     \
+            ('H'  , 'h', 'curly', 'greek', 'kai'),                              \
             (),                                                                 \
-            ('N'  , 'hook', 'hat', 'backwards', 'Cyrillic', 'I'),               \
-            ('K'  , 'Cyrillic', 'zhje', 'backwards', 'double', 'hook'),         \
-            ('E'  , 'euro', 'backwards', '2', 'dot', 'Cyrillic'),               \
-            ('A'  , 'at', 'mountain', 'line', 'Cyrillic', 'yus'),               \
-            ('cat', 'spider', 'squid', 'line', 'triangle', 'Cyrillic', 'yus'),  \
+            ('N'  , 'n', 'hook', 'hat', 'backwards', 'cyrillic', 'I'),          \
+            ('K'  , 'k', 'cyrillic', 'zhje', 'backwards', 'double', 'hook'),    \
+            ('E'  , 'e', 'euro', 'backwards', '2', 'dot', 'cyrillic'),          \
+            ('A'  , 'a', 'at', 'mountain', 'line', 'cyrillic', 'yus'),          \
+            ('cat', 'kitty', 'spider', 'squid', 'triangle', 'cyrillic', 'yus'), \
             (),                                                                 \
-            ('o'  , 'curly', 'Cyrillic', 'hook'),                               \
-            ('6'  , 'flat', 'Cyrillic', 'be'),                                  \
-            ('b'  , 'line', 'bt', 'Cyrillic', 'yat'),                           \
-            ('3'  , 'hook', 'Cyrillic', 'komi', 'dzje'),                        \
-            ('3'  , 'antennae', 'hook', 'snake', 'Cyrillic', 'ksi'),            \
-            ('='  , 'not', 'equals', 'railroad', 'line', 'bars', 'Cyrillic'),   \
+            ('o'  , 'curly', 'cyrillic', 'hook'),                               \
+            ('6'  , 'flat', 'cyrillic', 'be'),                                  \
+            ('b'  , 'line', 'bt', 'cyrillic', 'yat'),                           \
+            ('3'  , 'hook', 'cyrillic', 'komi', 'dzje'),                        \
+            ('3'  , 'antennae', 'hook', 'snake', 'cyrillic', 'ksi'),            \
+            ('='  , 'not', 'equals', 'railroad', 'line', 'bars', 'cyrillic'),   \
             (),                                                                 \
             ('?'  , 'question', 'mark', 'inverted'),                            \
             ('*'  , 'star', 'white', 'blank', 'empty', 'hollow', 'white'),      \
             ('**' , '*', 'star', 'black', 'filled'),                            \
             ('c'  , 'copyright', 'circle', 'ring'),                             \
-            ('P'  , 'backwards', 'pilcrow', 'paragraph'),                       \
-            (':)' , 'smiley', 'face', 'tongue', 'Arabic', 'teh', '2', 'dot')]
+            ('P'  , 'p', 'backwards', 'pilcrow', 'paragraph'),                  \
+            (':)' , 'smiley', 'face', 'tongue', 'arabic', 'teh', '2', 'dot')]
 
 def parse_input(user_input):
     symbols = user_input.lower().split(' ')
     if len(symbols)<1:
         return None
     elif symbols[0]=='help':
-        symbols_help(symbols)
+        if len(symbols)==1 :
+            print("  Enter symbol codes separated by spaces (in any order).")
+            print("  Type \"help all\" to see the full list of symbol codes.")
+            print("  Type \"help <item>\" to find specific terms; separate tags with spaces.")
+        elif symbols[1]=='all':
+            symbols_help(None)
+        else:
+            symbols_help(set(symbols[1:]))
     else:
         return symbols
 
 def symbols_help(search):
-    if len(search)==1:
-        print("  Type \"help <search tag>\" to find a specific term.")
-        print("  Separate multiple tags with spaces.")
+    if search==None:
         print("    Code\tDescription of Symbol")
         print("    ────\t───────────────────────────────────────────")
         for symbol in help_tbl:
@@ -64,8 +69,16 @@ def symbols_help(search):
                 print()
             else:
                 print("    " + symbol[0] + '\t\t' + ' '.join(symbol))
-
-
+    else:
+        search_result = set()
+        print("    Code\tDescription of Symbol")
+        print("    ────\t───────────────────────────────────────────")
+        for symbol in help_tbl:
+            for tag in symbol:
+                if tag in search or tag in syns_tbl and len(search & syns_tbl[tag])>0:
+                    search_result.add(symbol)
+        for symbol in search_result:
+            print("    " + symbol[0] + '\t\t' + ' '.join(symbol))
 
 def prompt_symbols():
     global serial_num

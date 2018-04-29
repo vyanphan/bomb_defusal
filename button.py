@@ -70,6 +70,8 @@ def prompt_button():
                 pass
             elif color=='b' and label=='abort':
                 prompt_held_button()
+            elif prompt_batteries()==-1:
+                pass
             elif label=='detonate' and prompt_batteries()>1:
                 print("PRESS AND IMMEDIATELY RELEASE")
             elif color=='w' and prompt_indicator()=="CAR":
@@ -82,6 +84,7 @@ def prompt_button():
                 print("PRESS AND IMMEDIATELY RELEASE")
             else:
                 prompt_held_button()
+        print()
 
 print("Button")
 prompt_button()
