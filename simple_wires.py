@@ -50,7 +50,7 @@ def prompt_serial_num():
     global serial_num
     global last_digit
     if serial_num==None:
-        serial_num = input("  Serial #:\t").lower()
+        serial_num = input("  Serial#:\t").lower()
     if last_digit==None:
         try:
             last_digit = int(serial_num[-1:])

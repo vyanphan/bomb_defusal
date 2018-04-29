@@ -34,7 +34,7 @@ def prompt_batteries():
     global batteries
     if batteries==None:
         try:
-            batteries = int(input("  # Batteries:\t").lower())
+            batteries = int(input("  #Batteries:\t").lower())
         except:
             batteries = None
             print("Invalid battery number")

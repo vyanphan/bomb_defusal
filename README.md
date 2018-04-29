@@ -37,7 +37,7 @@ activated and probably way better than this one.
 - The input is not case-sensitive, but make sure to use the formats as described below.
 
 ### Wires (Simple)
-- When the prompt appears, enter the color codes of the wires in top-down order.
+- When the prompt appears, enter the color codes of the wires in top-down order (no spaces).
 - The color codes are specified in the prompt and below.
 
 	| Color  | Code |
@@ -48,5 +48,20 @@ activated and probably way better than this one.
 	| Black  | K    |
 	| White  | W    |
 	
-- If the prompt asks for the serial number simply enter it as shown on the bomb. 
+- If the prompt asks `Serial#` simply enter it as shown on the bomb. 
+
+### Wires (Simple)
+- When the prompt appears, enter the color code of and the label on the button.
+- The color codes are specified in the prompt and below.
+
+    | Color  | Code |
+    |--------|------|
+    | Blue   | B    |
+    | Red    | R    |
+    | Yellow | Y    |
+    | Black  | K    |
+    | White  | W    |
+    
+- If the prompt asks `#Batteries` enter the number of batteries around the bomb. 
+- If the prompt asks `Indicator` enter the label by the lit indicator (e.g. `CAR`, `FRK`).
 
