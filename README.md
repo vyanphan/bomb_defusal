@@ -38,6 +38,14 @@ activated and probably way better than this one.
 
 ### Wires (Simple)
 - When the prompt appears, enter the color codes of the wires in top-down order (no spaces).
+    - If the prompt asks `Serial#` simply enter it as shown on the bomb.
+    ```
+    Simple Wires
+    > Color codes:  rwyr
+      Serial#:      d7089c2
+    2ND    
+    ```
+- Type `reset` to clear `Serial#` if you entered it wrong by accident.
 - Type `help` to see the color codes for each wire.
 
 	| Color  | Code |
@@ -47,19 +55,20 @@ activated and probably way better than this one.
 	| Yellow | Y    |
 	| Black  | K    |
 	| White  | W    |
-- If the prompt asks `Serial#` simply enter it as shown on the bomb.
-- Type `reset` to clear `Serial#` if you entered it wrong by accident.
-- Example
-    ```
-    Simple Wires
-    > Color codes:  rwyr
-      Serial#:      d7089c2
-    2ND    
-    ```
+
 
 ### Button
 - When the prompt appears, enter the color code of and the label on the button, with one space in
   between them.
+    - If the prompt asks `#Batteries` enter the number of batteries around the bomb. 
+    - If the prompt asks `Indicator` enter the label by the lit indicator (e.g. `CAR`, `FRK`).
+    ```
+    > Color Label:  r abort
+      #Batteries:   3
+      Indicator:    frk
+    PRESS AND IMMEDIATELY RELEASE
+    ```
+- Type `reset` to clear `#Batteries` and `Indicator` if you entered either wrong by accident.
 - Type `help` to see the color codes for the button. Enter the button label as-is.
 
     | Color  | Code |
@@ -69,17 +78,30 @@ activated and probably way better than this one.
     | Yellow | Y    |
     | Black  | K    |
     | White  | W    |
-- If the prompt asks `#Batteries` enter the number of batteries around the bomb. 
-- If the prompt asks `Indicator` enter the label by the lit indicator (e.g. `CAR`, `FRK`).
-- Type `reset` to clear `#Batteries` and `Indicator` if you entered either wrong by accident.
-- Example
-    ```
-    > Color Label:  r abort
-      #Batteries:   3
-      Indicator:    frk
-    PRESS AND IMMEDIATELY RELEASE
-    ```
 
+
+### Symbols
+- When the prompt appears, enter the symbol codes of the buttons separated by spaces.
+    ```
+    > Symbols:      * .) O ?
+    O .) * ?
+    ```
+- Type `help all` to see all the symbol codes. On the right will be a description of the symbol,
+  and on the left will be the symbol code you should enter.
+- Type `help <item>` to search  for a specific term.
+    ```
+    > Symbols:      help c
+    Code        Description of Symbol
+    ────        ───────────────────────────────────────────
+    C.          C. c c. dot forwards greek lunate sigma
+    .)          .) c c. dot backwards greek lunate sigma
+    c           c copyright circle ring
+
+    > Symbols:      help backwards c with dot
+    Code        Description of Symbol
+    ────        ───────────────────────────────────────────
+    .)          .) c c. dot backwards greek lunate sigma
+    ```
 
 
 
