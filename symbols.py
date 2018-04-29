@@ -85,7 +85,8 @@ def symbols_help(search):
                         result[symbol] += 1
                     else:
                         result[symbol] = 1
-        for symbol in sorted(result, key=lambda k:result[k], reverse=True):
+        maxMatches = max(result.values())
+        for symbol in [s for s in result if result[s]==maxMatches]:
             print("    " + symbol[0] + '\t\t' + ' '.join(symbol))
 
 def prompt_symbols():
