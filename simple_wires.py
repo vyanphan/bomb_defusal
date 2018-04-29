@@ -60,6 +60,7 @@ def prompt_serial_num():
         except BaseException:
             serial_num = ''
             last_digit = None
+            print("Invalid serial number!")
             return -1
     return 0
 
