@@ -4,10 +4,28 @@ import sys
 batteries = None
 indicator = None
 
+def parse_input(user_input):
+    button = user_input.lower().split(' ')
+    if len(button) != 2:
+        return None, None
+    color = button[0]
+    if color=='red':
+        color = 'r'
+    elif color=='blue':
+        color = 'b'
+    elif color=='yellow':
+        color = 'y'
+    elif color=='white':
+        color = 'w'
+    elif color=='black':
+        color = 'k'
+    label = button[1]
+    return color, label
+
 def prompt_held_button():
     print("  HOLD AND RELEASE WHEN:")
-    print("    Color\tTimer has _ in any position")
-    print("    _____\t___________________________")
+    print("    Color\tTimer has x in any position")
+    print("    ──────\t───────────────────────────")
     print("    Blue\t4")
     print("    Yellow\t5")
     print("    Other\t1")
@@ -26,7 +44,7 @@ def prompt_batteries():
 def prompt_indicator():
     global indicator
     if indicator==None:
-        indicator = input("  Indicator:\t").lower()
+        indicator = input("  Indicator:\t").upper()
     return indicator
 
 def prompt_button():
@@ -47,20 +65,22 @@ def prompt_button():
             batteries = None
             indicator = None
         else:
-            button = user_input.split(' ')
-            if button[0]=='b' and button[1]=='abort':
+            color, label = parse_input(user_input)
+            if color==None or label==None:
+                pass
+            elif color=='b' and label=='abort':
                 prompt_held_button()
-            elif button[1]=='detonate' and prompt_batteries()>1:
+            elif label=='detonate' and prompt_batteries()>1:
                 print("PRESS AND IMMEDIATELY RELEASE")
-            elif button[0]=='w' and prompt_indicator()=="CAR":
+            elif color=='w' and prompt_indicator()=="CAR":
                 prompt_held_button()
             elif prompt_batteries()>2 and prompt_indicator()=="FRK":
                 print("PRESS AND IMMEDIATELY RELEASE")
-            elif button[0]=='y':
+            elif color=='y':
                 prompt_held_button()
-            elif button[0]=='r' and button[1]=='hold':
+            elif color=='r' and label=='hold':
                 print("PRESS AND IMMEDIATELY RELEASE")
-            else
+            else:
                 prompt_held_button()
 
 print("Button")
