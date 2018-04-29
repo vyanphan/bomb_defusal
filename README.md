@@ -32,9 +32,10 @@ activated and probably way better than this one.
 - Run `python3 main.py` to start the program.
 
 ### General
-- If at any moment you messed up, use the command `restart` to clear the module.
 - When prompted, type the name of the module.
-- The input is not case-sensitive, but make sure to use the formats as described below.
+- To quit a module, type `q`.
+- To clear information already entered into a module, type `reset`.
+- Most inputs are not case-sensitive, but make sure to use the formats as described below.
 
 ### Wires (Simple)
 - When the prompt appears, enter the color codes of the wires in top-down order (no spaces).
