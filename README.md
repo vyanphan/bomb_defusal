@@ -37,8 +37,8 @@ activated and probably way better than this one.
 - The input is not case-sensitive, but make sure to use the formats as described below.
 
 ### Wires (Simple)
-- When the prompt appears, enter the colors of the wires in top-down order, separated by spaces.
-- Pros who want to break a speed challenge can enter the color codes of the wires.
+- When the prompt appears, enter the color codes of the wires in top-down order.
+- The color codes are specified in the prompt and below.
 
 	| Color  | Code |
 	|--------|------|
