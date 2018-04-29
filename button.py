@@ -2,8 +2,9 @@
 import sys
 
 batteries = None
+indicator = None
 
-def held_button():
+def prompt_held_button():
     print("  HOLD AND RELEASE WHEN:")
     print("    Color\tTimer has _ in any position")
     print("    _____\t___________________________")
@@ -11,7 +12,7 @@ def held_button():
     print("    Yellow\t5")
     print("    Other\t1")
 
-def batteries():
+def prompt_batteries():
     if batteries==None:
         try:
             batteries = int(input("  # Batteries:\t").lower())
@@ -20,6 +21,11 @@ def batteries():
             print("Invalid battery number")
             return -1
     return 0
+
+def prompt_indicator():
+    if indicator==None:
+        indicator = input("  Indicator:\t").lower()
+    return indicator
 
 def prompt_button():
     global batteries
@@ -37,14 +43,15 @@ def prompt_button():
         else:
             button = user_input.split(' ')
             if button[0]=='b' and button[1]=='abort':
-                held_button()
+                prompt_held_button()
             elif button[1]=='detonate':
-                batteries()
+                prompt_batteries()
                 if batteries>1:
                     print("PRESS AND IMMEDIATELY RELEASE")
-            elif button[0]=='w':
-                print("  If lit indicator says CAR:")
-            elif 
+            elif button[0]=='w' and prompt_indicator=="CAR":
+                prompt_held_button()
+            elif prompt_batteries()==0 and batteries>2:
+                print("  If lit indicator says FRK:")
                 
 
 print("Button")
