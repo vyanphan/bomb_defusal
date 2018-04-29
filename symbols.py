@@ -1,42 +1,50 @@
 #!/usr/bin/env python3
 import sys
 
-help_tbl = [(1,  'O', 'line', 'balloon', 'Greek', 'koppa'),                              \
-            (0,  'A', 'at', 't', 'mountain', 'line', 'Cyrillic', 'yus'),                  \
-            (11, 'lambda', 'y', 'upside', 'down', 'reverse', 'inverted', 'line', 'slash', 'Greek'),                        \
-            (20, 'lightning', 'bolt', 'squiggly', 'zigzag', 'Greek', 'koppa'),                       \
-            (23, 'cat', 'spider', 'squid', 'knife', 'bar', 'line', 'triangle', 'Cyrillic', 'yus'),                    \
-            (3,  'Greek', 'kai', 'curly', 'cursive', 'fancy', 'script', 'H'),                            \
-            (6,  'Greek', 'lunate', 'sigma', 'backwards', 'reverse', 'inverted', 'C', 'dot'),                  \
-            
-            (7,  'E', 'euro', '2', 'two', 'dot', 'dots', 'backwards', 'reverse', 'inverted', 'Cyrillic'),            \
-            (2,  'Cyrillic', 'curly', 'cursive', 'fancy', 'script', 'o', 'hook'),                            \
-            (21, 'blank', 'empty', 'hollow', 'white', 'star'),                         \
-            (19, '?', 'question', 'mark', 'upside', 'down', 'reverse', 'inverted'),             \
-            
-            (4,  'copyright', 'circle', 'c', 'symbol'),                            \
-            (24, 'W', 'butt', 'pumpkin', 'comma', 'Greek', 'omega'),                                \
-            (8,  'K', 'Cyrillic', 'zhje', 'backwards', 'reverse', 'inverted', 'double', 'hook'),            \
-            (26, '3', 'hook', 'Cyrillic', 'komi', 'dzje', )
-            
-            (15, 'Cyrllic', 'be', 'flat', '6'),                                      \
-            (18, 'pilcrow', 'paragraph', 'symbol', 'reverse', 'inverted', 'backwards', 'P'),             \
-            (14, 'Cyrillic', 'yat', 'b', 'cross', 't', 'bt'),                        \
-            (25, 'Arabic', 'teh', 'ring', 'smiley', 'face', 'tongue')
-            
-            (12, 'Greek', 'psi', 'trident', 'pitchfork'),                                    \
-            (5,  'Greek', 'lunate', 'sigma', 'forwards', 'C', 'dot'),                   \
-            (16, 'Cyrillic', 'ksi', 'snake', 'funky', '3', 'antennae', 'hook', 'tail', 'dragon'),                               \
-            (22, 'black', 'filled', 'star'),                                  \
+synonyms_tbl = {'inverted':  ('inverted', 'reverse', 'upside', 'down', 'upside-down'), \
+                'backwards': ('backwards', 'reverse', 'inverted'), \
+                'line':      ('line', 'stick', 'beard', 't', 'slash', 'bar', 'cross'), \
+                'hook':      ('hook', 'curl', 'tail')
+                'snake':     ('snake', 'dragon', 'worm', 'squiggly', 'funky')
+                'dot':       ('dot', 'dots', 'point', 'period')
+                'curly':     ('curly', 'cursive', 'fancy', 'script')
+                '2':         ('2', 'two')
+                '3':         ('3', 'three')
+}
 
-            (17, 'Cyrillic', 'thousands', 'not', 'equals', 'railroad', 'track', 'bars'),                \
-            (10, 'Greek', 'ae'),                                    \
-            (9,  'Cyrillic', 'I', 'backwards', 'reverse', 'inverted', 'N', 'tail', 'hat'),   \
-            (13, 'Greek', 'omega'),                                          \
+help_tbl = [
+            (10, 'ae', 'a', 'e', 'Greek'),                                          \
+            (11, 'y', 'lambda', 'inverted', 'line', 'Greek'),                       \
+            (12, 'Y', 'psi', 'trident', 'pitchfork', 'Greek'),                      \
+            (13, 'U', 'omega', 'horseshoe', 'Greek')                                \
+            (24, 'W', 'butt', 'pumpkin', 'comma', 'Greek', 'omega'),                \
+            (),                                                                     \
+            (5,  'C.', 'C', 'dot', 'forwards', 'Greek', 'lunate', 'sigma'),         \
+            (6,  '.)', 'C', 'dot', 'backwards', 'Greek', 'lunate', 'sigma'),        \
+            (1,  'O', 'line', 'balloon', 'Greek', 'koppa'),                         \
+            (20, 'Z', 'lightning', 'snake', 'zigzag', 'Greek', 'koppa'),            \
+            (3,  'H', 'curly', 'Greek', 'kai'),                                     \
+            (),                                                                     \
+            (9,  'N', 'hook', 'hat', 'backwards', 'Cyrillic', 'I'),                 \
+            (8,  'K', 'Cyrillic', 'zhje', 'backwards', 'double', 'hook'),           \
+            (7,  'E', 'euro', 'backwards', '2', 'dot', 'Cyrillic'),                 \
+            (0,  'A', 'at', 'mountain', 'line', 'Cyrillic', 'yus'),                 \
+            (23, 'cat', 'spider', 'squid', 'line', 'triangle', 'Cyrillic', 'yus'),  \
+            (),                                                                     \
+            (2,  'o', 'curly', 'Cyrillic', 'hook'),                                 \
+            (15, '6', 'flat', 'Cyrillic', 'be'),                                    \
+            (14, 'b', 'line', 'bt', 'Cyrillic', 'yat'),                             \
+            (26, '3', 'hook', 'Cyrillic', 'komi', 'dzje', )                         \
+            (16, '3', 'antennae', 'hook', 'snake', 'Cyrillic', 'ksi'),              \
+            (17, '=', 'not', 'equals', 'railroad', 'line', 'bars', 'Cyrillic'),     \
+            (),                                                                     \
+            (19, '?', 'question', 'mark', 'inverted'),                              \
+            (21, '*', 'star', 'white', 'blank', 'empty', 'hollow', 'white'),        \
+            (22, '**', '*', 'star', 'black', 'filled'),                             \
+            (4,  'c', 'copyright', 'circle', 'ring'),                               \
+            (18, 'P', 'backwards', 'pilcrow', 'paragraph'),                         \
+            (25, ':)', 'smiley', 'face', 'tongue', 'Arabic', 'teh', '2', 'dot')]
 
-
-symbols_tbl = ['A', 'O', 'o', 'H', 'c', 'C.', '.)', 'E..', 'K', 'N', 'ae', 'L', 'Y', \
-               'U', 'b', '6', '3', '=', 'P', '?', 'Z', '*', '**', 'cat', 'W', ':)']
 
 def symbols_help():
     for i in range(26):
