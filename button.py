@@ -21,7 +21,7 @@ def prompt_batteries():
             batteries = None
             print("Invalid battery number")
             return -1
-    return 0
+    return batteries
 
 def prompt_indicator():
     global indicator
@@ -50,15 +50,18 @@ def prompt_button():
             button = user_input.split(' ')
             if button[0]=='b' and button[1]=='abort':
                 prompt_held_button()
-            elif button[1]=='detonate':
-                prompt_batteries()
-                if batteries>1:
-                    print("PRESS AND IMMEDIATELY RELEASE")
-            elif button[0]=='w' and indicator=="CAR":
+            elif button[1]=='detonate' and prompt_batteries()>1:
+                print("PRESS AND IMMEDIATELY RELEASE")
+            elif button[0]=='w' and prompt_indicator()=="CAR":
                 prompt_held_button()
-            elif prompt_batteries()==0 and batteries>2:
-                print("  If lit indicator says FRK:")
-                
+            elif prompt_batteries()>2 and prompt_indicator()=="FRK":
+                print("PRESS AND IMMEDIATELY RELEASE")
+            elif button[0]=='y':
+                prompt_held_button()
+            elif button[0]=='r' and button[1]=='hold':
+                print("PRESS AND IMMEDIATELY RELEASE")
+            else
+                prompt_held_button()
 
 print("Button")
 prompt_button()
