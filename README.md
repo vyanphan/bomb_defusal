@@ -91,17 +91,14 @@ activated and probably way better than this one.
 - Type `help <item>` to search  for a specific term.
     ```
     > Symbols:      help c
-    Code        Description of Symbol
-    ────        ───────────────────────────────────────────
-    C.          C. c c. dot forwards greek lunate sigma
-    .)          .) c c. dot backwards greek lunate sigma
-    c           c copyright circle ring
+        Code        Description of Symbol
+        ────        ───────────────────────────────────────────
+        C.          C. c c. dot forwards greek lunate sigma
+        .)          .) c c. dot backwards greek lunate sigma
+        c           c copyright circle ring
 
     > Symbols:      help backwards c with dot
-    Code        Description of Symbol
-    ────        ───────────────────────────────────────────
-    .)          .) c c. dot backwards greek lunate sigma
+        Code        Description of Symbol
+        ────        ───────────────────────────────────────────
+        .)          .) c c. dot backwards greek lunate sigma
     ```
-
-
-
