@@ -13,6 +13,7 @@ def prompt_held_button():
     print("    Other\t1")
 
 def prompt_batteries():
+    global batteries
     if batteries==None:
         try:
             batteries = int(input("  # Batteries:\t").lower())
@@ -23,12 +24,14 @@ def prompt_batteries():
     return 0
 
 def prompt_indicator():
+    global indicator
     if indicator==None:
         indicator = input("  Indicator:\t").lower()
     return indicator
 
 def prompt_button():
     global batteries
+    global indicator
     quit = False
     while not quit:
         user_input = input("> Color Label:\t").lower()
@@ -40,6 +43,9 @@ def prompt_button():
             print("    Black    k")
         elif user_input == "q":
             quit = True
+        elif user_input == "reset":
+            batteries = None
+            indicator = None
         else:
             button = user_input.split(' ')
             if button[0]=='b' and button[1]=='abort':
@@ -48,7 +54,7 @@ def prompt_button():
                 prompt_batteries()
                 if batteries>1:
                     print("PRESS AND IMMEDIATELY RELEASE")
-            elif button[0]=='w' and prompt_indicator=="CAR":
+            elif button[0]=='w' and indicator=="CAR":
                 prompt_held_button()
             elif prompt_batteries()==0 and batteries>2:
                 print("  If lit indicator says FRK:")
