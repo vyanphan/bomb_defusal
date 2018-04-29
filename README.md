@@ -38,7 +38,7 @@ activated and probably way better than this one.
 
 ### Wires (Simple)
 - When the prompt appears, enter the color codes of the wires in top-down order (no spaces).
-- The color codes are specified in the prompt and below.
+- Type `help` to see the color codes for each wire.
 
 	| Color  | Code |
 	|--------|------|
@@ -47,12 +47,20 @@ activated and probably way better than this one.
 	| Yellow | Y    |
 	| Black  | K    |
 	| White  | W    |
-	
-- If the prompt asks `Serial#` simply enter it as shown on the bomb. 
+- If the prompt asks `Serial#` simply enter it as shown on the bomb.
+- Type `reset` to clear `Serial#` if you entered it wrong by accident.
+- Example
+    ```
+    Simple Wires
+    > Color codes:  rwyr
+      Serial#:      d7089c2
+    2ND    
+    ```
 
-### Wires (Simple)
-- When the prompt appears, enter the color code of and the label on the button.
-- The color codes are specified in the prompt and below.
+### Button
+- When the prompt appears, enter the color code of and the label on the button, with one space in
+  between them.
+- Type `help` to see the color codes for the button. Enter the button label as-is.
 
     | Color  | Code |
     |--------|------|
@@ -61,7 +69,17 @@ activated and probably way better than this one.
     | Yellow | Y    |
     | Black  | K    |
     | White  | W    |
-    
 - If the prompt asks `#Batteries` enter the number of batteries around the bomb. 
 - If the prompt asks `Indicator` enter the label by the lit indicator (e.g. `CAR`, `FRK`).
+- Type `reset` to clear `#Batteries` and `Indicator` if you entered either wrong by accident.
+- Example
+    ```
+    > Color Label:  r abort
+      #Batteries:   3
+      Indicator:    frk
+    PRESS AND IMMEDIATELY RELEASE
+    ```
+
+
+
 
