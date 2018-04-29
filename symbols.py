@@ -18,8 +18,8 @@ help_tbl = [
             ('U'  , 'omega', 'u', 'horseshoe', 'greek'),                        \
             ('W'  , 'w', 'butt', 'pumpkin', 'comma', 'greek', 'omega'),         \
             (),                                                                 \
-            ('C.' , 'c', 'C', 'dot', 'forwards', 'greek', 'lunate', 'sigma'),   \
-            ('.)' , 'c', 'C', 'dot', 'backwards', 'greek', 'lunate', 'sigma'),  \
+            ('C.' , 'c', 'dot', 'forwards', 'greek', 'lunate', 'sigma'),        \
+            ('.)' , 'c', 'dot', 'backwards', 'greek', 'lunate', 'sigma'),       \
             ('O'  , 'o', 'line', 'balloon', 'greek', 'koppa'),                  \
             ('Z'  , 'z', 'lightning', 'snake', 'zigzag', 'greek', 'koppa'),     \
             ('H'  , 'h', 'curly', 'greek', 'kai'),                              \
@@ -44,19 +44,24 @@ help_tbl = [
             ('P'  , 'p', 'backwards', 'pilcrow', 'paragraph'),                  \
             (':)' , 'smiley', 'face', 'tongue', 'arabic', 'teh', '2', 'dot')]
 
+symb_tbl = [['O', 'A', 'y', 'Z', 'cat', 'H', '.)'], \
+            [], \
+            [], \
+            []]
+
 def parse_input(user_input):
-    symbols = user_input.lower().split(' ')
+    symbols = user_input.split(' ')
     if len(symbols)<1:
         return None
-    elif symbols[0]=='help':
+    elif symbols[0].lower()=='help':
         if len(symbols)==1 :
             print("  Enter symbol codes separated by spaces (in any order).")
             print("  Type \"help all\" to see the full list of symbol codes.")
             print("  Type \"help <item>\" to find specific terms; separate tags with spaces.")
-        elif symbols[1]=='all':
+        elif symbols[1].lower()=='all':
             symbols_help(None)
         else:
-            symbols_help(set(symbols[1:]))
+            symbols_help(set([s.lower() for s in symbols[1:]]))
     else:
         return symbols
 
@@ -70,14 +75,17 @@ def symbols_help(search):
             else:
                 print("    " + symbol[0] + '\t\t' + ' '.join(symbol))
     else:
-        search_result = set()
+        result = {}
         print("    Code\tDescription of Symbol")
         print("    ────\t───────────────────────────────────────────")
         for symbol in help_tbl:
             for tag in symbol:
-                if tag in search or tag in syns_tbl and len(search & syns_tbl[tag])>0:
-                    search_result.add(symbol)
-        for symbol in search_result:
+                if tag in search or tag in syns_tbl and len(search&syns_tbl[tag])>0:
+                    if symbol in result:
+                        result[symbol] += 1
+                    else:
+                        result[symbol] = 1
+        for symbol in sorted(result, key=lambda k:result[k], reverse=True):
             print("    " + symbol[0] + '\t\t' + ' '.join(symbol))
 
 def prompt_symbols():
@@ -85,14 +93,14 @@ def prompt_symbols():
     global last_digit
     quit = False
     while not quit:
-        user_input = input("> Symbols:\t").lower()
+        user_input = input("> Symbols:\t")
         symbols = parse_input(user_input)
         if user_input=="q":
             quit = True
         elif symbols==None or len(symbols)!=4:
             pass
         else:
-            pass
+            print(symbols)
         print()
 
 print("Symbols")
