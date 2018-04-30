@@ -2,7 +2,7 @@
 import sys
 
 syns_tbl = {'inverted':  {'inverted', 'reverse', 'upside', 'down', 'upside-down'}, \
-            'backwards': {'backwards', 'reverse', 'inverted'},                     \
+            'backwards': {'backwards', 'backward', 'reverse', 'inverted'},         \
             'line':      {'line', 'stick', 'beard', 't', 'slash', 'bar', 'cross'}, \
             'hook':      {'hook', 'curl', 'tail', 'beard'},                        \
             'snake':     {'snake', 'dragon', 'worm', 'squiggly', 'funky'},         \
@@ -20,7 +20,7 @@ help_tbl = [
             (),                                                                 \
             ('C.' , 'c', 'c.', 'dot', 'forwards', 'greek', 'lunate', 'sigma'),  \
             ('.)' , 'c', 'c.', 'dot', 'backwards', 'greek', 'lunate', 'sigma'), \
-            ('O'  , 'o', 'line', 'balloon', 'greek', 'koppa'),                  \
+            ('O'  , 'o', 'line', 'balloon', 'tennis', 'greek', 'koppa'),        \
             ('Z'  , 'z', 'lightning', 'snake', 'zigzag', 'greek', 'koppa'),     \
             ('H'  , 'h', 'curly', 'greek', 'kai'),                              \
             (),                                                                 \
