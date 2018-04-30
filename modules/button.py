@@ -30,7 +30,7 @@ def prompt_held_button():
 def prompt_batteries():
     if global_vars.get_batteries()==None:
         try:
-            global_vars.set_batteries(int(input("    #Batteries:\t").lower()))
+            global_vars.set_batteries(int(input("    Num Batteries:\t").lower()))
         except:
             global_vars.set_batteries(None)
             print("  Invalid battery number")
@@ -39,7 +39,7 @@ def prompt_batteries():
 
 def prompt_indicator():
     if global_vars.get_indicator()==None:
-        global_vars.set_indicator(input("    Indicator:\t").upper())
+        global_vars.set_indicator(input("    Lit Indicator:\t").upper())
     return global_vars.get_indicator()
 
 def prompt_button():

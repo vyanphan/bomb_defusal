@@ -39,14 +39,14 @@ activated and probably way better than this one.
 
 ### Wires (Simple)
 - When the prompt appears, enter the color codes of the wires in top-down order (no spaces).
-    - If the prompt asks `Serial#` simply enter it as shown on the bomb.
+    - If the prompt asks `Serial Number` simply enter it as shown on the bomb.
     ```
     Simple Wires
     > Color codes:  rwyr
       Serial#:      d7089c2
     2ND    
     ```
-- Type `reset` to clear `Serial#` if you entered it wrong by accident.
+- Type `reset` to clear `Serial Number` if you entered it wrong by accident.
 - Type `help` to see the color codes for each wire.
 
 	| Color  | Code |
@@ -61,15 +61,15 @@ activated and probably way better than this one.
 ### Button
 - When the prompt appears, enter the color code of and the label on the button, with one space in
   between them.
-    - If the prompt asks `#Batteries` enter the number of batteries around the bomb. 
-    - If the prompt asks `Indicator` enter the label by the lit indicator (e.g. `CAR`, `FRK`).
+    - If the prompt asks `Num Batteries` enter the number of batteries around the bomb. 
+    - If the prompt asks `Lit Indicator` enter the label by the lit indicator (e.g. `CAR`, `FRK`).
     ```
     > Color Label:  r abort
       #Batteries:   3
       Indicator:    frk
     PRESS AND IMMEDIATELY RELEASE
     ```
-- Type `reset` to clear `#Batteries` and `Indicator` if you entered either wrong by accident.
+- Type `reset` to clear `Num Batteries` and `Lit Indicator` if you entered either incorrectly.
 - Type `help` to see the color codes for the button. Enter the button label as-is.
 
     | Color  | Code |
