@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-from modules import global_vars as gv
+from modules import global_vars as global_vars
 
 def parse_input(user_input):
     button = user_input.lower().split(' ')
@@ -28,19 +28,19 @@ def prompt_held_button():
     print("      Other\t1")
 
 def prompt_batteries():
-    if gv.get_batteries()==None:
+    if global_vars.get_batteries()==None:
         try:
-            gv.set_batteries(int(input("    #Batteries:\t").lower()))
+            global_vars.set_batteries(int(input("    #Batteries:\t").lower()))
         except:
-            gv.set_batteries(None)
+            global_vars.set_batteries(None)
             print("  Invalid battery number")
             return -1
-    return gv.get_batteries()
+    return global_vars.get_batteries()
 
 def prompt_indicator():
-    if gv.get_indicator()==None:
-        gv.set_indicator(input("    Indicator:\t").upper())
-    return gv.get_indicator()
+    if global_vars.get_indicator()==None:
+        global_vars.set_indicator(input("    Indicator:\t").upper())
+    return global_vars.get_indicator()
 
 def prompt_button():
     quit = False
@@ -55,8 +55,8 @@ def prompt_button():
             print("      White    w")
             print("      Black    k")
         elif user_input == "reset":
-            gv.set_batteries(None)
-            gv.set_indicator(None)
+            global_vars.set_batteries(None)
+            global_vars.set_indicator(None)
         else:
             color, label = parse_input(user_input)
             if color==None or label==None:
