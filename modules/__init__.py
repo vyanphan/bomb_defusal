@@ -1,3 +1,3 @@
 import sys
 
-__all__ = ['simple_wires', 'button', 'symbols']
+__all__ = ['global_vars', 'simple_wires', 'button', 'symbols']
