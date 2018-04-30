@@ -10,20 +10,19 @@ def help_main():
 def prompt_main():
     quit = False
     while not quit:
-        user_input = input("> Module:\t").lower()
+        user_input = input("[MODULE]\t").lower()
+        print()
         if user_input=="q":
             quit = True
         elif user_input=="help":
             help_main()
         elif user_input=="simple wires":
-            prompt_simple_wires()
+            simple_wires.prompt_simple_wires()
         elif user_input=="button":
-            prompt_button()
+            button.prompt_button()
         elif user_input=="symbols":
-            prompt_symbols()
-
+            symbols.prompt_symbols()
         print()
-
 
     
 

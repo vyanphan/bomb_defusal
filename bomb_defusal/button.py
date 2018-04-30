@@ -50,7 +50,6 @@ def prompt_indicator():
 def prompt_button():
     global batteries
     global indicator
-    print("Button")
     quit = False
     while not quit:
         user_input = input("> Color Label:\t").lower()

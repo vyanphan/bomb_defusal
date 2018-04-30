@@ -64,7 +64,6 @@ def prompt_serial_num():
 def prompt_simple_wires():
     global serial_num
     global last_digit
-    print("Simple Wires")
     quit = False
     while not quit:
         user_input = input("> Color codes:\t").lower()
