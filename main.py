@@ -10,7 +10,7 @@ def help_main():
 def prompt_main():
     quit = False
     while not quit:
-        user_input = input("[MODULE]\t").lower()
+        user_input = input("[MODULE] ").lower()
         print()
         if user_input=="q":
             quit = True

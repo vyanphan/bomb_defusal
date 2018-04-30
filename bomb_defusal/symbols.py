@@ -1,5 +1,4 @@
 #!/usr/bin/env python3
-import sys
 
 syns_tbl = {'inverted':  {'inverted', 'reverse', 'upside', 'down', 'upside-down'}, \
             'backwards': {'backwards', 'backward', 'reverse', 'inverted'},         \
@@ -57,9 +56,9 @@ def parse_input(user_input):
         return None
     elif symbols[0].lower()=='help':
         if len(symbols)==1 :
-            print("  Enter symbol codes separated by spaces (in any order).")
-            print("  Type \"help all\" to see the full list of symbol codes.")
-            print("  Type \"help <item>\" to find specific terms; separate tags with spaces.")
+            print("    Enter symbol codes separated by spaces (in any order).")
+            print("    Type \"help all\" to see the full list of symbol codes.")
+            print("    Type \"help <item>\" to find specific terms; separate tags with spaces.")
         elif symbols[1].lower()=='all':
             symbols_help(None)
         else:
@@ -69,17 +68,17 @@ def parse_input(user_input):
 
 def symbols_help(search):
     if search==None:
-        print("    Code\tDescription of Symbol")
-        print("    ────\t───────────────────────────────────────────")
+        print("      Code\tDescription of Symbol")
+        print("      ────\t───────────────────────────────────────────")
         for symbol in help_tbl:
             if symbol==():
                 print()
             else:
-                print("    " + symbol[0] + '\t\t' + ' '.join(symbol))
+                print("      " + symbol[0] + '\t\t' + ' '.join(symbol))
     else:
         result = {}
-        print("    Code\tDescription of Symbol")
-        print("    ────\t───────────────────────────────────────────")
+        print("      Code\tDescription of Symbol")
+        print("      ────\t───────────────────────────────────────────")
         for symbol in help_tbl:
             for tag in symbol:
                 if tag in search or tag in syns_tbl and len(search&syns_tbl[tag])>0:
@@ -90,7 +89,7 @@ def symbols_help(search):
         if len(result)>0:
             maxMatches = max(result.values())
             for symbol in [s for s in result if result[s]==maxMatches]:
-                print("    " + symbol[0] + '\t\t' + ' '.join(symbol))
+                print("      " + symbol[0] + '\t\t' + ' '.join(symbol))
 
 def symbols_solve(symbols):
     for slist in symb_tbl:
@@ -103,7 +102,7 @@ def prompt_symbols():
     global last_digit
     quit = False
     while not quit:
-        user_input = input("> Symbols:\t")
+        user_input = input("  > Symbols:\t")
         symbols = parse_input(user_input)
         if user_input=="q":
             quit = True
@@ -112,7 +111,7 @@ def prompt_symbols():
         else:
             ans = symbols_solve(symbols)
             if ans==-1:
-                print("Incorrect symbol code.")
+                print("  Incorrect symbol code.")
             else:
-                print(' '.join(ans))
+                print("  " + ' '.join(ans))
         print()
