@@ -1,6 +1,5 @@
 #!/usr/bin/env python3
-
-import global_vars as gv
+from modules import global_vars as gv
 
 def parse_input(user_input):
     button = user_input.lower().split(' ')

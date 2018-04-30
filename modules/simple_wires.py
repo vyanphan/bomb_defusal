@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-import global_vars as gv
+from modules import global_vars
 
 def wires_3(wires):
     if 'r' not in wires:
@@ -44,17 +44,17 @@ def wires_6(wires):
         print("  4TH")
 
 def prompt_serial_num():
-    if gv.get_serial_num()==None:
-        gv.set_serial_num(input("    Serial Number:\t").lower())
-    if gv.get_last_digit()==None:
+    if global_vars.get_serial_num()==None:
+        global_vars.set_serial_num(input("    Serial Number:\t").lower())
+    if global_vars.get_last_digit()==None:
         try:
-            gv.set_last_digit(int(gv.get_serial_num()[-1:]))
+            global_vars.set_last_digit(int(global_vars.get_serial_num()[-1:]))
         except BaseException:
-            gv.set_serial_num(None)
-            gv.set_last_digit(None)
+            global_vars.set_serial_num(None)
+            global_vars.set_last_digit(None)
             print("  Invalid serial number!")
             return 0
-    return gv.get_last_digit()
+    return global_vars.get_last_digit()
 
 def prompt_simple_wires():
     quit = False
@@ -69,8 +69,8 @@ def prompt_simple_wires():
             print("      White    w")
             print("      Black    k")
         elif user_input=="reset":
-            gv.set_serial_num(None)
-            gv.set_last_digit(None)
+            global_vars.set_serial_num(None)
+            global_vars.set_last_digit(None)
         else:
             wires = [c for c in user_input]
             if len(wires)==3:

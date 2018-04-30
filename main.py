@@ -13,6 +13,8 @@ def prompt_main():
             quit = True
         elif user_input=="help":
             help_main()
+        elif user_input=="reset":
+            global_vars.reset_all()
         elif user_input=="simple wires":
             simple_wires.prompt_simple_wires()
         elif user_input=="button":

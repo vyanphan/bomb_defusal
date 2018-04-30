@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 serial_num = None
 last_digit = None
 batteries  = None
@@ -29,7 +30,7 @@ def set_batteries(b):
 def get_indicator():
     return indicator
 
-def set_indicator(i)
+def set_indicator(i):
     global indicator
     indicator = i
 
