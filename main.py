@@ -1,8 +1,5 @@
 #!/usr/bin/env python3
-
-# import button as b
-# import symbols as s
-from bomb_defusal import *
+from modules import *
 
 def help_main():
     pass
@@ -23,7 +20,5 @@ def prompt_main():
         elif user_input=="symbols":
             symbols.prompt_symbols()
         print()
-
-    
 
 prompt_main()
