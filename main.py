@@ -1,7 +1,11 @@
 #!/usr/bin/env python3
 
-import button as b
-import symbols as s
+# import button as b
+# import symbols as s
+from bomb_defusal import *
+
+def help_main():
+    pass
 
 def prompt_main():
     quit = False
@@ -9,14 +13,14 @@ def prompt_main():
         user_input = input("> Module:\t").lower()
         if user_input=="q":
             quit = True
-        elif user_Input=="help":
-
+        elif user_input=="help":
+            help_main()
         elif user_input=="simple wires":
-
+            prompt_simple_wires()
         elif user_input=="button":
-
+            prompt_button()
         elif user_input=="symbols":
-            s.prompt_symbols()
+            prompt_symbols()
 
         print()
 
