@@ -73,6 +73,8 @@ def symbols_help(search):
         for symbol in help_tbl:
             if symbol==():
                 print()
+            elif len(symbol[0])>1:
+                print("      " + symbol[0] + '\t' + ' '.join(symbol))
             else:
                 print("      " + symbol[0] + '\t\t' + ' '.join(symbol))
     else:
@@ -89,7 +91,10 @@ def symbols_help(search):
         if len(result)>0:
             maxMatches = max(result.values())
             for symbol in [s for s in result if result[s]==maxMatches]:
-                print("      " + symbol[0] + '\t\t' + ' '.join(symbol))
+                if len(symbol[0])>1:
+                    print("      " + symbol[0] + '\t' + ' '.join(symbol))
+                else:
+                    print("      " + symbol[0] + '\t\t' + ' '.join(symbol))
 
 def symbols_solve(symbols):
     for slist in symb_tbl:
