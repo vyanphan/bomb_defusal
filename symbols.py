@@ -101,6 +101,7 @@ def symbols_solve(symbols):
 def prompt_symbols():
     global serial_num
     global last_digit
+    print("Symbols")
     quit = False
     while not quit:
         user_input = input("> Symbols:\t")
@@ -116,6 +117,3 @@ def prompt_symbols():
             else:
                 print(' '.join(ans))
         print()
-
-print("Symbols")
-prompt_symbols()
