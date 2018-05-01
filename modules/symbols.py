@@ -1,53 +1,53 @@
 #!/usr/bin/env python3
 
-syns_tbl = {'inverted':  {'inverted', 'reverse', 'upside', 'down', 'upside-down'}, \
-            'backwards': {'backwards', 'backward', 'reverse', 'inverted'},         \
-            'line':      {'line', 'stick', 'beard', 't', 'slash', 'bar', 'cross'}, \
-            'hook':      {'hook', 'curl', 'tail', 'beard'},                        \
-            'snake':     {'snake', 'dragon', 'worm', 'squiggly', 'funky'},         \
-            'dot':       {'dot', 'dots', 'point', 'period'},                       \
-            'curly':     {'curly', 'cursive', 'fancy', 'script'},                  \
-            '2':         {'2', 'two'},                                             \
+syns_tbl = {'inverted':  {'inverted', 'reverse', 'upside', 'down', 'upside-down'},
+            'backwards': {'backwards', 'backward', 'reverse', 'inverted'},
+            'line':      {'line', 'stick', 'beard', 't', 'slash', 'bar', 'cross'},
+            'hook':      {'hook', 'curl', 'tail', 'beard'},
+            'snake':     {'snake', 'dragon', 'worm', 'squiggly', 'funky'},
+            'dot':       {'dot', 'dots', 'point', 'period'},
+            'curly':     {'curly', 'cursive', 'fancy', 'script'},
+            '2':         {'2', 'two'},
             '3':         {'3', 'three'}}
 
 help_tbl = [
-            ('ae' , 'a', 'e', 'greek'),                                         \
-            ('y'  , 'lambda', 'inverted', 'line', 'greek'),                     \
-            ('Y'  , 'y', 'psi', 'trident', 'pitchfork', 'greek'),               \
-            ('U'  , 'omega', 'u', 'horseshoe', 'greek'),                        \
-            ('W'  , 'w', 'butt', 'pumpkin', 'comma', 'greek'),                  \
-            (),                                                                 \
-            ('C.' , 'c', 'c.', 'dot', 'forwards', 'greek', 'lunate', 'sigma'),  \
-            ('.)' , 'c', 'c.', 'dot', 'backwards', 'greek', 'lunate', 'sigma'), \
-            ('O'  , 'o', 'line', 'balloon', 'tennis', 'greek', 'koppa'),        \
-            ('Z'  , 'z', 'lightning', 'snake', 'zigzag', 'greek', 'koppa'),     \
-            ('H'  , 'h', 'curly', 'greek', 'kai'),                              \
-            (),                                                                 \
-            ('N'  , 'n', 'hook', 'hat', 'backwards', 'cyrillic', 'I'),          \
-            ('K'  , 'k', 'cyrillic', 'zhje', 'backwards', 'double', 'hook'),    \
-            ('E'  , 'e', 'euro', 'backwards', '2', 'dot', 'cyrillic'),          \
-            ('A'  , 'a', 'at', 'mountain', 'line', 'cyrillic', 'yus'),          \
-            ('cat', 'kitty', 'spider', 'squid', 'triangle', 'cyrillic', 'yus'), \
-            (),                                                                 \
-            ('o'  , 'curly', 'cyrillic', 'hook'),                               \
-            ('6'  , 'flat', 'cyrillic', 'be'),                                  \
-            ('b'  , 'line', 'bt', 'cyrillic', 'yat'),                           \
-            ('3'  , 'melted', 'hook', 'cyrillic', 'komi', 'dzje'),              \
-            ('3(' , '3', 'antennae', 'hook', 'snake', 'cyrillic', 'ksi'),       \
-            ('='  , 'not', 'equals', 'railroad', 'line', 'bars', 'cyrillic'),   \
-            (),                                                                 \
-            ('?'  , 'question', 'mark', 'inverted'),                            \
-            ('*'  , 'star', 'white', 'blank', 'empty', 'hollow', 'white'),      \
-            ('**' , '*', 'star', 'black', 'filled'),                            \
-            ('c'  , 'copyright', 'circle', 'ring'),                             \
-            ('P'  , 'p', 'backwards', 'pilcrow', 'paragraph'),                  \
+            ('ae' , 'a', 'e', 'greek'),
+            ('y'  , 'lambda', 'inverted', 'line', 'greek'),
+            ('Y'  , 'y', 'psi', 'trident', 'pitchfork', 'greek'),
+            ('U'  , 'omega', 'u', 'horseshoe', 'greek'),
+            ('W'  , 'w', 'butt', 'pumpkin', 'comma', 'greek'),
+            (),
+            ('C.' , 'c', 'c.', 'dot', 'forwards', 'greek', 'lunate', 'sigma'),
+            ('.)' , 'c', 'c.', 'dot', 'backwards', 'greek', 'lunate', 'sigma'),
+            ('O'  , 'o', 'line', 'balloon', 'tennis', 'greek', 'koppa'),
+            ('Z'  , 'z', 'lightning', 'snake', 'zigzag', 'greek', 'koppa'),
+            ('H'  , 'h', 'curly', 'greek', 'kai'),
+            (),
+            ('N'  , 'n', 'hook', 'hat', 'backwards', 'cyrillic', 'I'),
+            ('K'  , 'k', 'cyrillic', 'zhje', 'backwards', 'double', 'hook'),
+            ('E'  , 'e', 'euro', 'backwards', '2', 'dot', 'cyrillic'),
+            ('A'  , 'a', 'at', 'mountain', 'line', 'cyrillic', 'yus'),
+            ('cat', 'kitty', 'spider', 'squid', 'triangle', 'cyrillic', 'yus'),
+            (),
+            ('o'  , 'curly', 'cyrillic', 'hook'),
+            ('6'  , 'flat', 'cyrillic', 'be'),
+            ('b'  , 'line', 'bt', 'cyrillic', 'yat'),
+            ('3'  , 'melted', 'hook', 'cyrillic', 'komi', 'dzje'),
+            ('3(' , '3', 'antennae', 'hook', 'snake', 'cyrillic', 'ksi'),
+            ('='  , 'not', 'equals', 'railroad', 'line', 'bars', 'cyrillic'),
+            (),
+            ('?'  , 'question', 'mark', 'inverted'),
+            ('*'  , 'star', 'white', 'blank', 'empty', 'hollow', 'white'),
+            ('**' , '*', 'star', 'black', 'filled'),
+            ('c'  , 'copyright', 'circle', 'ring'),
+            ('P'  , 'p', 'backwards', 'pilcrow', 'paragraph'),
             (':)' , 'smiley', 'face', 'tongue', 'arabic', 'teh', '2', 'dot')]
 
-symb_tbl = [['O', 'A' , 'y' , 'Z'  , 'cat', 'H' , '.)'], \
-            ['E', 'O' , '.)', 'o'  , '*'  , 'H' , '?' ], \
-            ['c', 'W' , 'o' , 'K'  , '3'  , 'y' , '*' ], \
-            ['6', 'P' , 'b' , 'cat', 'K'  , '?' , ':)'], \
-            ['Y', ':)', 'b' , 'C.' , 'P'  , '3(', '**'], \
+symb_tbl = [['O', 'A' , 'y' , 'Z'  , 'cat', 'H' , '.)'],
+            ['E', 'O' , '.)', 'o'  , '*'  , 'H' , '?' ],
+            ['c', 'W' , 'o' , 'K'  , '3'  , 'y' , '*' ],
+            ['6', 'P' , 'b' , 'cat', 'K'  , '?' , ':)'],
+            ['Y', ':)', 'b' , 'C.' , 'P'  , '3(', '**'],
             ['6', 'E' , '=' , 'ae' , 'Y'  , 'N' , 'U' ]]
 
 def parse_input(user_input):
