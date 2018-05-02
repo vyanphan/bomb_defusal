@@ -71,11 +71,10 @@ def solve_whos(key, buttons):
         words = wordlist[key]
         for w in words:
             if w in buttons:
-                print("  " + w)
+                print("  " + w.upper())
                 break
     except:
         print("  Invalid button entry!")
-
 
 def prompt_whos():
     quit = False
@@ -87,7 +86,7 @@ def prompt_whos():
             whos_help()
         else:
             try:
-                buttons = input("  > {0:16}".format("Buttons:")).strip().lower().split(",")
+                buttons = input("    {0:16}".format("Buttons:")).strip().lower().split(",")
                 key = buttons[headers[user_input]]
                 solve_whos(key, buttons)
             except:

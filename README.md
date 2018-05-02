@@ -167,6 +167,20 @@ activated and probably way better than this one.
 - Type `q` to quit. Type `reset` to clear `Serial#` ONLY.
 
 ### On the Subject of Who's on First
+- When the prompt appears, enter the display as-is, then the 6 words as-is, separated by commas.
+    ```
+    > Display:        your
+      Buttons:        like,you are,what?,uh uh,right,you're
+    RIGHT
+    ```
+- Type `help` to see the order in which to enter the 6 words on the buttons:
+    
+    | Header|
+    |-------|
+    | 1 | 4 |
+    | 2 | 5 |
+    | 3 | 6 |
+- Type `q` to quit.
 
 ### On the Subject of Memory
 
