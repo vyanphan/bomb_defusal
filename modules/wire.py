@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 from modules import globvars
 
-def wires_3(wires):
+def wire_3(wires):
     if 'r' not in wires:
         print("  2ND")
     elif wires[-1]=='w':
@@ -11,8 +11,10 @@ def wires_3(wires):
     else:
         print("  LAST")
 
-def wires_4(wires):
-    if wires.count('r')>1 and prompt_serial_num()%2==1:
+def wire_4(wires):
+    if prompt_serial_num()<0:
+        print("Invalid serial number!")
+    elif wires.count('r')>1 and prompt_serial_num()==1:
         print("  LAST RED")
     elif wires[-1]=='y' and wires.count('r')==0:
         print("  1ST")
@@ -23,8 +25,10 @@ def wires_4(wires):
     else:
         print("  2ND")
 
-def wires_5(wires):
-    if wires[-1]=='k' and prompt_serial_num()%2==1:
+def wire_5(wires):
+    if prompt_serial_num()<0:
+        print("Invalid serial number!")
+    elif wires[-1]=='k' and prompt_serial_num()==1:
         print("  4TH")
     elif wires.count('r')==1 and wires.count('y')>1:
         print("  1ST")
@@ -33,8 +37,10 @@ def wires_5(wires):
     else:
         print("  1ST")
 
-def wires_6(wires):
-    if wires.count('y')==0 and prompt_serial_num()%2==1:
+def wire_6(wires):
+    if prompt_serial_num()<0:
+        print("Invalid serial number!")
+    elif wires.count('y')==0 and prompt_serial_num()==1:
         print("  3RD")
     elif wires.count('y')==1 and wires.count('w')>1:
         print("  4TH")
@@ -52,11 +58,10 @@ def prompt_serial_num():
         except BaseException:
             globvars.set_serial_num(None)
             globvars.set_last_digit(None)
-            print("  Invalid serial number!")
-            return 0
-    return globvars.get_last_digit()
+            return -1
+    return globvars.get_last_digit()%2
 
-def wires_help():
+def wire_help():
     print("      <c><c><c>...<c>")
     print("      Enter color codes according to the table without spaces.")
     print("        Red      r")
@@ -74,18 +79,18 @@ def prompt_wire():
         if user_input=="q":
             quit = True
         elif user_input=="help":
-            wires_help()
+            wire_help()
         elif user_input=="reset":
             globvars.set_serial_num(None)
             globvars.set_last_digit(None)
         else:
             wires = [c for c in user_input]
             if len(wires)==3:
-                wires_3(wires)
+                wire_3(wires)
             elif len(wires)==4:
-                wires_4(wires)
+                wire_4(wires)
             elif len(wires)==5:
-                wires_5(wires)
+                wire_5(wires)
             elif len(wires)==6:
-                wires_6(wires)
+                wire_6(wires)
         print()
