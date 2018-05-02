@@ -24,7 +24,7 @@ syns_list = [["wire", "wires", "simple", "easy", "simple wire", "simple wires", 
              ["complicated", "hard", "complicated wires", "complicated wire", "hard wires", "hard wire"]        ,
              ["sequence", "sequences", "sequence wires", "sequence wire", "wire sequence", "wire sequences"]    ,
              ["maze", "mazes"]                                                                                  ,
-             ["password", "passwords", "letter", "letters"]                                                     ,
+             ["pswd", "password", "passwords", "letter", "letters"]                                             ,
              ["knob", "knobs", "needy"]]
 
 cmds_list = [wire.prompt_wire              ,
