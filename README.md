@@ -174,7 +174,8 @@ activated and probably way better than this one.
     RIGHT
     ```
 - Type `help` to see the order in which to enter the 6 words on the buttons:
-    
+
+    |---|---|
     | 1 | 4 |
     | 2 | 5 |
     | 3 | 6 |
