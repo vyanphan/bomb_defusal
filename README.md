@@ -3,10 +3,10 @@ Keep Talking and Nobody Explodes
 
 
 ## Table of Contents
-- [About]
-- [Installation]
-- [Instructions]
-    - [General]
+- [About](#about)
+- [Installation](#installation)
+- [Instructions](#instructions)
+    - [General](#general)
     - [On the Subject of Wires](#on-the-subject-of-wires)
     - [On the Subject of The Button](#on-the-subject-of-the-button)
     - [On the Subject of Keypads](#on-the-subject-of-keypads)
