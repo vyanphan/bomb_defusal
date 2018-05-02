@@ -57,10 +57,10 @@ def help_main():
     print("    number of strikes"  )
 
 def help_all():
-    print("  {0:25}{1}".format("On the Subject of...", "Synonyms"))
-    print("  " + "─" * 87)
+    print("  {0:22}{1}".format("On the Subject of...", "Synonyms"))
+    print("  " + "─" * 103)
     for i in range(len(mods_list)):
-        print("  {0:25}{1}".format(mods_list[i], ", ".join(syns_list[i])))
+        print("  {0:22}{1}".format(mods_list[i], ", ".join(syns_list[i])))
 
 commands = {"help"     : help_main,
             "help all" : help_all,
@@ -77,10 +77,10 @@ def prompt_main():
         if user_input=="q":
             quit = True
         else:
-            try:
-                commands[user_input]()
-            except BaseException:
-                print("Module does not exist.")
+            # try:
+            commands[user_input]()
+            # except BaseException:
+            #     print("Module does not exist.")
         print()
 
 prompt_main()
