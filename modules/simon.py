@@ -15,8 +15,11 @@ def map_position():
 
 def solve_simon(colors):
     i = map_position()
-    ans = [color_map[c][i] for c in colors]
-    print("  " + ' '.join(ans))
+    try:
+        ans = [color_map[c][i] for c in colors]
+        print("  " + ' '.join(ans))
+    except:
+        print("  Color code incorrect.")
 
 def simon_help():
     print("      <c><c><c><c>")
@@ -25,8 +28,9 @@ def simon_help():
     print("        Blue     b")
     print("        Green    g")
     print("        Yellow   y")
-    print("      Type 'q' to quit or 'reset' to clear Serial# ONLY.")
+    print("      If asked for 'Serial#', enter serial number as-is.")
     print("      Type 'set <i>' to set a new #Strikes. Type 'set 0' to clear #Strikes.")
+    print("      Type 'q' to quit or 'reset' to clear Serial# ONLY.")
 
 def prompt_simon():
     quit = False

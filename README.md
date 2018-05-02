@@ -43,6 +43,7 @@ activated and probably way better than this one.
       > Color Codes:    q
     ```
 - Commands for the main prompt
+
     | Command    | Action                       |
     |------------|------------------------------|
     | `q`        | Quits the whole program.     |
@@ -50,12 +51,17 @@ activated and probably way better than this one.
     | `help all` | Lists all possible modules.  |
     | `reset`    | Clears all saved information.|
 - Commands for specific modules 
+
     | Command    | Action                                        |
     |------------|-----------------------------------------------|
     | `q`        | Quits the module and returns to the main menu.|
     | `help`     | Displays general help for that module.        |
     | `help all` | Lists all possible modules.                   |
     | `reset`    | Clears saved information for that module only.|
+- "Saved information" refers to items applying to the entire bomb, e.g.
+    - number of batteries
+    - serial number
+    - number of strikes
 
 ### On the Subject of Wires
 - When the prompt appears, enter the color codes of the wires without spaces.
@@ -69,13 +75,13 @@ activated and probably way better than this one.
 
     | Color  | Code |
     |--------|------|
-    | Blue   | B    |
     | Red    | R    |
+    | Blue   | B    |
     | Yellow | Y    |
-    | Black  | K    |
     | White  | W    |
+    | Black  | K    |
 - If the prompt asks `Serial#` simply enter the serial number as shown on the bomb.
-- Type `q` to quit the module or `reset` to clear `Serial#` if you entered it wrong by accident.
+- Type `q` to quit to main menu. Type `reset` to clear `Serial#` if you entered it wrong.
 
 ### On the Subject of The Button
 - When the prompt appears, enter the color code and the button label as-is, with one space in
@@ -88,13 +94,13 @@ activated and probably way better than this one.
     ```
 - Type `help` to see the color codes for the button. Enter the button label as-is.
 
-    | Color  | Code |
-    |--------|------|
-    | Blue   | B    |
-    | Red    | R    |
-    | Yellow | Y    |
-    | Black  | K    |
-    | White  | W    |
+    | Color           | Code |
+    |-----------------|------|
+    | Red             | R    |
+    | Blue            | B    |
+    | Yellow          | Y    |
+    | White           | W    |
+    | Any other color | X    |
 - If the prompt asks `#Batteries` enter the number of batteries around the bomb. If the prompt
   asks `Indicator` enter the label by the lit indicator (e.g. `CAR`, `FRK`).
 - Type `q` to quit. Type `reset` to clear `#Batteries` and `Indicator` if you entered either wrong.
@@ -124,4 +130,19 @@ activated and probably way better than this one.
 - Type `q` to quit.
 
 ### On the Subject of Simon Says
-- When the prompt appears, enter the color codes of the 
+- When the prompt appears, enter the color codes of the flashing lights without spaces.
+    ```
+    > Color Codes:    rgby
+    b y r g
+    ```
+- Type `help` to see the color codes for each button.
+
+    | Color  | Code |
+    |--------|------|
+    | Red    | R    |
+    | Blue   | B    |
+    | Green  | G    |
+    | Yellow | Y    |
+- If the prompt asks `Serial#` simply enter the serial number as shown on the bomb.
+- Type `set <i>` to set a new number of `strikes`. For example, type `set 0` to clear `strikes`.
+- Type `q` to quit. Type `reset` to clear `Serial#` ONLY.

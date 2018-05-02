@@ -14,8 +14,6 @@ def parse_input(user_input):
         color = 'y'
     elif color=='white':
         color = 'w'
-    elif color=='black':
-        color = 'k'
     label = button[1]
     return color, label
 
@@ -45,11 +43,11 @@ def prompt_indicator():
 def button_help():
     print("      <c> <label>")
     print("      Enter color code according to the table, 1 space, then button label as-is.")
-    print("        Red      r")
-    print("        Blue     b")
-    print("        Yellow   y")
-    print("        White    w")
-    print("        Black    k")
+    print("        {0:17}{1}".format("Red", "r"))
+    print("        {0:17}{1}".format("Blue", "b"))
+    print("        {0:17}{1}".format("Yellow", "y"))
+    print("        {0:17}{1}".format("White", "w"))
+    print("        {0:17}{1}".format("Any other color", "x"))
     print("      Enter a number for #Batteries. Enter Indicator label as-is.")
     print("      Type 'q' to quit or 'reset' to clear #Batteries and Indicator.")
 
