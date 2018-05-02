@@ -10,8 +10,7 @@ syns_tbl = {'inverted':  {'inverted', 'reverse', 'upside', 'down', 'upside-down'
             '2':         {'2', 'two'},
             '3':         {'3', 'three'}}
 
-help_tbl = [
-            ('ae' , 'a', 'e', 'greek'),
+help_tbl = [('ae' , 'a', 'e', 'greek'),
             ('y'  , 'lambda', 'inverted', 'line', 'greek'),
             ('Y'  , 'y', 'psi', 'trident', 'pitchfork', 'greek'),
             ('U'  , 'omega', 'u', 'horseshoe', 'greek'),
