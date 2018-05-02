@@ -20,12 +20,12 @@ def parse_input(user_input):
     return color, label
 
 def prompt_held_button():
-    print("    HOLD AND RELEASE WHEN:")
-    print("      Color\tTimer has x in any position")
-    print("      ──────\t───────────────────────────")
-    print("      Blue\t4")
-    print("      Yellow\t5")
-    print("      Other\t1")
+    print("  HOLD AND RELEASE WHEN:")
+    print("    {0:8}{1}".format("Color", "Timer has x in any position"))
+    print("    " + "─" * 35)
+    print("    {0:8}{1}".format("Blue", "4"))
+    print("    {0:8}{1}".format("Yellow", "5"))
+    print("    {0:8}{1}".format("Other", "1"))
 
 def prompt_batteries():
     if global_vars.get_batteries()==None:

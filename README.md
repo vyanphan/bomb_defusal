@@ -33,7 +33,8 @@ activated and probably way better than this one.
 
 ### General
 - When prompted, type the name of the module.
-- To quit a module, type `q`.
+- To quit a module, or the entire program, type `q`.
+- For general help, type `help`. To see all possible modules, type `help all`.
 - To clear information already entered into a module, type `reset`.
 - Most inputs are not case-sensitive, but make sure to use the formats as described below.
 
@@ -91,15 +92,15 @@ activated and probably way better than this one.
   and on the left will be the symbol code you should enter.
 - Type `help <item>` to search  for a specific term.
     ```
-    > Symbols:      help c
-        Code        Description of Symbol
-        ────        ───────────────────────────────────────────
-        C.          C. c c. dot forwards greek lunate sigma
-        .)          .) c c. dot backwards greek lunate sigma
-        c           c copyright circle ring
+    > Symbols:    help c
+        Code  Description of Symbol
+        ──────────────────────────────────────────────────
+        C.    C. c c. dot forwards greek lunate sigma
+        .)    .) c c. dot backwards greek lunate sigma
+        c     c copyright circle ring
 
-    > Symbols:      help backwards c with dot
-        Code        Description of Symbol
-        ────        ───────────────────────────────────────────
-        .)          .) c c. dot backwards greek lunate sigma
+    > Symbols:    help backwards c with dot
+        Code  Description of Symbol
+        ──────────────────────────────────────────────────
+        .)    .) c c. dot backwards greek lunate sigma
     ```

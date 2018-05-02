@@ -67,19 +67,17 @@ def parse_input(user_input):
 
 def symbols_help(search):
     if search==None:
-        print("      Code\tDescription of Symbol")
-        print("      ────\t───────────────────────────────────────────")
+        print("      {0:6}{1}".format("Code", "Description of Symbol"))
+        print("      " + "─" * 50)
         for symbol in help_tbl:
             if symbol==():
                 print()
-            elif len(symbol[0])>1:
-                print("      " + symbol[0] + '\t' + ' '.join(symbol))
             else:
-                print("      " + symbol[0] + '\t\t' + ' '.join(symbol))
+                print("      {0:6}{1}".format(symbol[0], ' '.join(symbol)))
     else:
         result = {}
-        print("      Code\tDescription of Symbol")
-        print("      ────\t───────────────────────────────────────────")
+        print("      {0:6}{1}".format("Code", "Description of Symbol"))
+        print("      " + "─" * 50)
         for symbol in help_tbl:
             for tag in symbol:
                 if tag in search or tag in syns_tbl and len(search&syns_tbl[tag])>0:
@@ -90,10 +88,7 @@ def symbols_help(search):
         if len(result)>0:
             maxMatches = max(result.values())
             for symbol in [s for s in result if result[s]==maxMatches]:
-                if len(symbol[0])>1:
-                    print("      " + symbol[0] + '\t' + ' '.join(symbol))
-                else:
-                    print("      " + symbol[0] + '\t\t' + ' '.join(symbol))
+                print("      {0:6}{1}".format(symbol[0], ' '.join(symbol)))
 
 def symbols_solve(symbols):
     for slist in symb_tbl:

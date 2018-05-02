@@ -8,10 +8,10 @@ syns_list = [["wire", "wires", "simple wire", "simple wires", "easy wire", "easy
              ["button", "buttons"],
              ["keypad", "keypads", "symbol", "symbols"],
              ["simon", "simon says"],
-             ["who's on first", "who's on 1st", "whos on first", "whos on 1st", "who", "whos", "first", "1st"],
+             ["who's on first", "who's on 1st", "whos on first", "whos on 1st", "whos", "1st"],
              ["memory", "memory wires", "memory wire"],
              ["morse code", "morse"],
-             ["complicated wires", "complicated wire", "complicated", "hard wires", "hard wire", "hard"],
+             ["complicated wires", "complicated wire", "complicated", "hard wires", "hard"],
              ["wire sequences", "sequence wires", "sequence wire", "sequence"],
              ["maze", "mazes"],
              ["password", "passwords", "letters"],
@@ -29,9 +29,10 @@ def help_main():
     print("  Type 'reset' in the main prompt to reset all saved information.")
 
 def help_all():
+    print("  {0:20}{1}".format("Module", "Synonyms"))
+    print("  " + "─" * 87)
     for i in range(len(mods_list)):
-        for s in syns_list[i]:
-            print("".format(mods_list[i], s))
+        print("  {0:20}{1}".format(mods_list[i], ", ".join(syns_list[i])))
 
 commands = {"help"     : help_main,
             "help all" : help_all,
