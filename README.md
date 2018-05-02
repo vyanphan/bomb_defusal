@@ -39,40 +39,14 @@ activated and probably way better than this one.
 - Most inputs are not case-sensitive, but make sure to use the formats as described below.
 
 ### On the Subject of Wires
-- When the prompt appears, enter the color codes of the wires in top-down order (no spaces).
-    - If the prompt asks `Serial#` simply enter the serial number as shown on the bomb.
+- When the prompt appears, enter the color codes of the wires in (no spaces).
     ```
     Simple Wires
     > Color codes:  rwyr
       Serial#:      d7089c2
     2ND    
     ```
-- Type `reset` to clear `Serial#` if you entered it wrong by accident.
 - Type `help` to see the color codes for each wire.
-
-	| Color  | Code |
-	|--------|------|
-	| Blue   | B    |
-	| Red    | R    |
-	| Yellow | Y    |
-	| Black  | K    |
-	| White  | W    |
-
-
-### On the Subject of The Button
-- When the prompt appears, enter the color code of and the label on the button, with one space in
-  between them.
-    - If the prompt asks `#Batteries` enter the number of batteries around the bomb. 
-    - If the prompt asks `Indicator` enter the label by the lit indicator (e.g. `CAR`, `FRK`).
-    ```
-    > Color Label:  r abort
-      #Batteries:   3
-      Indicator:    frk
-    PRESS AND IMMEDIATELY RELEASE
-    ```
-- Type `reset` to clear `#Batteries` and `Indicator` if you entered either incorrectly.
-- Type `help` to see the color codes for the button. Enter the button label as-is.
-
     | Color  | Code |
     |--------|------|
     | Blue   | B    |
@@ -80,7 +54,29 @@ activated and probably way better than this one.
     | Yellow | Y    |
     | Black  | K    |
     | White  | W    |
+- If the prompt asks `Serial#` simply enter the serial number as shown on the bomb.
+- Type `q` to quit the module or `reset` to clear `Serial#` if you entered it wrong by accident.
 
+### On the Subject of The Button
+- When the prompt appears, enter the color code and the button label as-is, with one space in
+  between them.
+    ```
+    > Color Label:  r abort
+      #Batteries:   3
+      Indicator:    frk
+    PRESS AND IMMEDIATELY RELEASE
+    ```
+- Type `help` to see the color codes for the button. Enter the button label as-is.
+    | Color  | Code |
+    |--------|------|
+    | Blue   | B    |
+    | Red    | R    |
+    | Yellow | Y    |
+    | Black  | K    |
+    | White  | W    |
+- If the prompt asks `#Batteries` enter the number of batteries around the bomb. If the prompt
+  asks `Indicator` enter the label by the lit indicator (e.g. `CAR`, `FRK`).
+- Type `q` to quit. Type `reset` to clear `#Batteries` and `Indicator` if you entered either wrong.
 
 ### On the Subject of Keypads
 - When the prompt appears, enter the symbol codes of the buttons separated by spaces.
@@ -90,7 +86,7 @@ activated and probably way better than this one.
     ```
 - Type `help all` to see all the symbol codes. On the right will be a description of the symbol,
   and on the left will be the symbol code you should enter.
-- Type `help <item>` to search  for a specific term.
+- Type `help <item>` to search for a specific term; separate multiple descriptors with spaces.
     ```
     > Symbols:    help c
         Code  Description of Symbol
@@ -104,3 +100,4 @@ activated and probably way better than this one.
         ──────────────────────────────────────────────────
         .)    .) c c. dot backwards greek lunate sigma
     ```
+- Type `q` to quit.

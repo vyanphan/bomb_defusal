@@ -16,38 +16,37 @@ def map_position():
 def solve_simon(colors):
     i = map_position()
     ans = [color_map[c][i] for c in colors]
-    print(' '.join())
+    print("  " + ' '.join(ans))
 
 def simon_help():
-    print("    <c><c><c><c>")
-    print("    Enter color codes according to the table without spaces.")
-    print("      Red      r")
-    print("      Blue     b")
-    print("      Green    g")
-    print("      Yellow   y")
-    print("    Type 'set <i>' to set a new #Strikes.")
-    print("    Type 'q' to quit or 'reset' to clear Serial#.")
+    print("      <c><c><c><c>")
+    print("      Enter color codes according to the table without spaces.")
+    print("        Red      r")
+    print("        Blue     b")
+    print("        Green    g")
+    print("        Yellow   y")
+    print("      Type 'q' to quit or 'reset' to clear Serial# ONLY.")
+    print("      Type 'set <i>' to set a new #Strikes. Type 'set 0' to clear #Strikes.")
 
 def prompt_simon():
     quit = False
     while not quit:
-        user_input = input("  > {0:16}".format("Color Codes:")).lower()
+        user_input = input("  > {0:16}".format("Color Codes:")).strip().lower()
         if user_input=="q":
             quit = True
         elif user_input=="help":
-
+            simon_help()
         elif user_input=="reset":
             globvars.set_serial_num(None)
         elif "set " in user_input:
             try:
-                globvars.set_strikes(int(input("    {0:16}".format("#Strikes"))))
+                globvars.set_strikes(int(user_input[4:]))
             except BaseException:
                 print("  Invalid number of strikes!")
         else:
             colors = [c for c in user_input]
             if globvars.get_serial_num()==None:
-                globvars.set_serial_num(input("    {0:16}".format("Serial#")).lower())
-
-
-
+                globvars.set_serial_num(input("    {0:16}".format("Serial#:")).strip().lower())
+            solve_simon(colors)
         print()
+        
