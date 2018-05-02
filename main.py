@@ -17,9 +17,10 @@ syns_list = [["wire", "wires", "simple wire", "simple wires", "easy wire", "easy
              ["password", "passwords", "letters"],
              ["knob", "knobs", "needy"]]
 
-cmds_list = [simple_wires.prompt_simple_wires,
+cmds_list = [wire.prompt_wire,
              button.prompt_button,
-             symbols.prompt_symbols]
+             keypad.prompt_keypad,
+             simon.prompt_simon]
 
 def help_main():
     print("  Type 'q' within a module to quit that single module.")

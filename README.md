@@ -38,7 +38,7 @@ activated and probably way better than this one.
 - To clear information already entered into a module, type `reset`.
 - Most inputs are not case-sensitive, but make sure to use the formats as described below.
 
-### Wires (Simple)
+### On the Subject of Wires
 - When the prompt appears, enter the color codes of the wires in top-down order (no spaces).
     - If the prompt asks `Serial#` simply enter the serial number as shown on the bomb.
     ```
@@ -59,7 +59,7 @@ activated and probably way better than this one.
 	| White  | W    |
 
 
-### Button
+### On the Subject of The Button
 - When the prompt appears, enter the color code of and the label on the button, with one space in
   between them.
     - If the prompt asks `#Batteries` enter the number of batteries around the bomb. 
@@ -82,7 +82,7 @@ activated and probably way better than this one.
     | White  | W    |
 
 
-### Symbols
+### On the Subject of Keypads
 - When the prompt appears, enter the symbol codes of the buttons separated by spaces.
     ```
     > Symbols:      * .) O ?

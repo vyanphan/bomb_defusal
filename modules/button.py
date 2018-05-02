@@ -30,7 +30,7 @@ def prompt_held_button():
 def prompt_batteries():
     if global_vars.get_batteries()==None:
         try:
-            global_vars.set_batteries(int(input("    {0:16}".format("#Batteries:")).lower()))
+            global_vars.set_batteries(int(input("    {0:16}".format("#Batteries:")).strip().lower()))
         except:
             global_vars.set_batteries(None)
             print("  Invalid battery number")
@@ -39,22 +39,28 @@ def prompt_batteries():
 
 def prompt_indicator():
     if global_vars.get_indicator()==None:
-        global_vars.set_indicator(input("    {0:16}".format("Indicator:")).upper())
+        global_vars.set_indicator(input("    {0:16}".format("Indicator:")).strip().upper())
     return global_vars.get_indicator()
+
+def button_help():
+    print("      <c> <label>")
+    print("      Enter color code according to the table, 1 space, then button label as-is.")
+    print("        Red      r")
+    print("        Blue     b")
+    print("        Yellow   y")
+    print("        White    w")
+    print("        Black    k")
+    print("      Enter a number for #Batteries. Enter Indicator label as-is.")
+    print("      Type 'q' to quit or 'reset' to clear #Batteries and Indicator.")
 
 def prompt_button():
     quit = False
     while not quit:
-        user_input = input("  > {0:16}".format("Color Label:")).lower()
+        user_input = input("  > {0:16}".format("Color Label:")).strip().lower()
         if user_input == "q":
             quit = True
         elif user_input == "help":
-            print("      Type 'q' to quit or 'reset' to clear batteries and indicator.")
-            print("      Red      r")
-            print("      Blue     b")
-            print("      Yellow   y")
-            print("      White    w")
-            print("      Black    k")
+            button_help()
         elif user_input == "reset":
             global_vars.set_batteries(None)
             global_vars.set_indicator(None)
