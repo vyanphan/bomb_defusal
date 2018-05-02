@@ -37,7 +37,7 @@ def help_all():
 
 commands = {"help"     : help_main,
             "help all" : help_all,
-            "reset"    : global_vars.reset_all}
+            "reset"    : globvars.reset_all}
 for i in range(len(cmds_list)):
     for term in syns_list[i]:
         commands[term] = cmds_list[i]
@@ -45,7 +45,7 @@ for i in range(len(cmds_list)):
 def prompt_main():
     quit = False
     while not quit:
-        user_input = input("[MODULE] ").lower()
+        user_input = input("[MODULE] ").strip().lower()
         print()
         if user_input=="q":
             quit = True

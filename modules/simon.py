@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-from modules import global_vars
+from modules import globvars
 
 color_map = {'r': ('b', 'y', 'g', 'b', 'r', 'y'),
              'b': ('r', 'g', 'r', 'y', 'b', 'g'),
@@ -7,11 +7,11 @@ color_map = {'r': ('b', 'y', 'g', 'b', 'r', 'y'),
              'y': ('g', 'r', 'b', 'r', 'g', 'r')}
 
 def map_position():
-    sn = global_vars.get_serial_num()
+    sn = globvars.get_serial_num()
     if 'a' in sn or 'e' in sn or 'i' in sn or 'o' in sn or 'u' in sn:
-        return global_vars.get_strikes()
+        return globvars.get_strikes()
     else:
-        return global_vars.get_strikes() + 3
+        return globvars.get_strikes() + 3
 
 def solve_simon(colors):
     i = map_position()
@@ -37,16 +37,16 @@ def prompt_simon():
         elif user_input=="help":
 
         elif user_input=="reset":
-            global_vars.set_serial_num(None)
+            globvars.set_serial_num(None)
         elif "set " in user_input:
             try:
-                global_vars.set_strikes(int(input("    {0:16}".format("#Strikes"))))
+                globvars.set_strikes(int(input("    {0:16}".format("#Strikes"))))
             except BaseException:
                 print("  Invalid number of strikes!")
         else:
             colors = [c for c in user_input]
-            if global_vars.get_serial_num()==None:
-                global_vars.set_serial_num(input("    {0:16}".format("Serial#")).lower())
+            if globvars.get_serial_num()==None:
+                globvars.set_serial_num(input("    {0:16}".format("Serial#")).lower())
 
 
 

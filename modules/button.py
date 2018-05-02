@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-from modules import global_vars
+from modules import globvars
 
 def parse_input(user_input):
     button = user_input.lower().split(' ')
@@ -28,19 +28,19 @@ def prompt_held_button():
     print("    {0:8}{1}".format("Other", "1"))
 
 def prompt_batteries():
-    if global_vars.get_batteries()==None:
+    if globvars.get_batteries()==None:
         try:
-            global_vars.set_batteries(int(input("    {0:16}".format("#Batteries:")).strip().lower()))
+            globvars.set_batteries(int(input("    {0:16}".format("#Batteries:")).strip().lower()))
         except:
-            global_vars.set_batteries(None)
+            globvars.set_batteries(None)
             print("  Invalid battery number")
             return -1
-    return global_vars.get_batteries()
+    return globvars.get_batteries()
 
 def prompt_indicator():
-    if global_vars.get_indicator()==None:
-        global_vars.set_indicator(input("    {0:16}".format("Indicator:")).strip().upper())
-    return global_vars.get_indicator()
+    if globvars.get_indicator()==None:
+        globvars.set_indicator(input("    {0:16}".format("Indicator:")).strip().upper())
+    return globvars.get_indicator()
 
 def button_help():
     print("      <c> <label>")
@@ -62,8 +62,8 @@ def prompt_button():
         elif user_input == "help":
             button_help()
         elif user_input == "reset":
-            global_vars.set_batteries(None)
-            global_vars.set_indicator(None)
+            globvars.set_batteries(None)
+            globvars.set_indicator(None)
         else:
             color, label = parse_input(user_input)
             if color==None or label==None:
