@@ -29,60 +29,67 @@ headers = {"yes"     :1,
            "c"       :3,
            "cee"     :5}
 
-wordlist = {"ready"  : ["YES","OKAY","WHAT","MIDDLE","LEFT","PRESS","RIGHT","BLANK","READY","NO","FIRST","UHHH","NOTHING","WAIT"],
-            "first"  : ["LEFT","OKAY","YES","MIDDLE","NO","RIGHT","NOTHING","UHHH","WAIT","READY","BLANK","WHAT","PRESS","FIRST"],
-            "no"     : ["LEFT","OKAY","YES","MIDDLE","NO","RIGHT","NOTHING","UHHH","WAIT","READY","BLANK","WHAT","PRESS","FIRST"],
-            "blank"  : ["WAIT","RIGHT","OKAY","MIDDLE","BLANK","PRESS","READY","NOTHING","NO","WHAT","LEFT","UHHH","YES","FIRST"],
-            "nothing": ["UHHH","RIGHT","OKAY","MIDDLE","YES","BLANK","NO","PRESS","LEFT","WHAT","WAIT","FIRST","NOTHING","READY"],
-            "yes"    : ["OKAY","RIGHT","UHHH","MIDDLE","FIRST","WHAT","PRESS","READY","NOTHING","YES","LEFT","BLANK","NO","WAIT"],
-            "what"   : ["UHHH","WHAT","LEFT","NOTHING","READY","BLANK","MIDDLE","NO","OKAY","FIRST","WAIT","YES","PRESS","RIGHT"],
-            "uhhh"   : ["READY","NOTHING","LEFT","WHAT","OKAY","YES","RIGHT","NO","PRESS","BLANK","UHHH","MIDDLE","WAIT","FIRST"],
-            "left"   : ["RIGHT","LEFT","FIRST","NO","MIDDLE","YES","BLANK","WHAT","UHHH","WAIT","PRESS","READY","OKAY","NOTHING"],
-            "right"  : ["YES","NOTHING","READY","PRESS","NO","WAIT","WHAT","RIGHT","MIDDLE","LEFT","UHHH","BLANK","OKAY","FIRST"],
-            "middle" : ["BLANK","READY","OKAY","WHAT","NOTHING","PRESS","NO","WAIT","LEFT","MIDDLE","RIGHT","FIRST","UHHH","YES"],
-            "okay"   : ["MIDDLE","NO","FIRST","YES","UHHH","NOTHING","WAIT","OKAY","LEFT","READY","BLANK","PRESS","WHAT","RIGHT"],
-            "wait"   : ["UHHH","NO","BLANK","OKAY","YES","LEFT","FIRST","PRESS","WHAT","WAIT","NOTHING","READY","RIGHT","MIDDLE"],
-            "press"  : ["RIGHT","MIDDLE","YES","READY","PRESS","OKAY","NOTHING","UHHH","BLANK","LEFT","FIRST","WHAT","NO","WAIT"],
-            "you"    : ["SURE","YOU ARE","YOUR","YOU'RE","NEXT","UH HUH","UR","HOLD","WHAT?","YOU","UH UH","LIKE","DONE","U"],
-            "you are": ["YOUR","NEXT","LIKE","UH HUH","WHAT?","DONE","UH UH","HOLD","YOU","U","YOU'RE","SURE","UR","YOU ARE"],
-            "your"   : ["UH UH","YOU ARE","UH HUH","YOUR","NEXT","UR","SURE","U","YOU'RE","YOU","WHAT?","HOLD","LIKE","DONE"],
-            "you're" : ["YOU","YOU'RE","UR","NEXT","UH UH","YOU ARE","U","YOUR","WHAT?","UH HUH","SURE","DONE","LIKE","HOLD"],
-            "ur"     : ["DONE","U","UR","UH HUH","WHAT?","SURE","YOUR","HOLD","YOU'RE","LIKE","NEXT","UH UH","YOU ARE","YOU"],
-            "u"      : ["UH HUH","SURE","NEXT","WHAT?","YOU'RE","UR","UH UH","DONE","U","YOU","LIKE","HOLD","YOU ARE","YOUR"],
-            "uh huh" : ["UH HUH","YOUR","YOU ARE","YOU","DONE","HOLD","UH UH","NEXT","SURE","LIKE","YOU'RE","UR","U","WHAT?"],
-            "uh uh"  : ["UR","U","YOU ARE","YOU'RE","NEXT","UH UH","DONE","YOU","UH HUH","LIKE","YOUR","SURE","HOLD","WHAT?"],
-            "what?"  : ["YOU","HOLD","YOU'RE","YOUR","U","DONE","UH UH","LIKE","YOU ARE","UH HUH","UR","NEXT","WHAT?","SURE"],
-            "done"   : ["SURE","UH HUH","NEXT","WHAT?","YOUR","UR","YOU'RE","HOLD","LIKE","YOU","U","YOU ARE","UH UH","DONE"],
-            "next"   : ["WHAT?","UH HUH","UH UH","YOUR","HOLD","SURE","NEXT","LIKE","DONE","YOU ARE","UR","YOU'RE","U","YOU"],
-            "hold"   : ["YOU ARE","U","DONE","UH UH","YOU","UR","SURE","WHAT?","YOU'RE","NEXT","HOLD","UH HUH","YOUR","LIKE"],
-            "sure"   : ["YOU ARE","DONE","LIKE","YOU'RE","YOU","HOLD","UH HUH","UR","SURE","U","WHAT?","NEXT","YOUR","UH UH"],
-            "like"   : ["YOU'RE","NEXT","U","UR","HOLD","DONE","UH UH","WHAT?","UH HUH","YOU","LIKE","SURE","YOU ARE","YOUR"]}
+wordlist = {"ready"  : ["yes","okay","what","middle","left","press","right","blank","ready","no","first","uhhh","nothing","wait"],
+            "first"  : ["left","okay","yes","middle","no","right","nothing","uhhh","wait","ready","blank","what","press","first"],
+            "no"     : ["left","okay","yes","middle","no","right","nothing","uhhh","wait","ready","blank","what","press","first"],
+            "blank"  : ["wait","right","okay","middle","blank","press","ready","nothing","no","what","left","uhhh","yes","first"],
+            "nothing": ["uhhh","right","okay","middle","yes","blank","no","press","left","what","wait","first","nothing","ready"],
+            "yes"    : ["okay","right","uhhh","middle","first","what","press","ready","nothing","yes","left","blank","no","wait"],
+            "what"   : ["uhhh","what","left","nothing","ready","blank","middle","no","okay","first","wait","yes","press","right"],
+            "uhhh"   : ["ready","nothing","left","what","okay","yes","right","no","press","blank","uhhh","middle","wait","first"],
+            "left"   : ["right","left","first","no","middle","yes","blank","what","uhhh","wait","press","ready","okay","nothing"],
+            "right"  : ["yes","nothing","ready","press","no","wait","what","right","middle","left","uhhh","blank","okay","first"],
+            "middle" : ["blank","ready","okay","what","nothing","press","no","wait","left","middle","right","first","uhhh","yes"],
+            "okay"   : ["middle","no","first","yes","uhhh","nothing","wait","okay","left","ready","blank","press","what","right"],
+            "wait"   : ["uhhh","no","blank","okay","yes","left","first","press","what","wait","nothing","ready","right","middle"],
+            "press"  : ["right","middle","yes","ready","press","okay","nothing","uhhh","blank","left","first","what","no","wait"],
+            "you"    : ["sure","you are","your","you're","next","uh huh","ur","hold","what?","you","uh uh","like","done","u"],
+            "you are": ["your","next","like","uh huh","what?","done","uh uh","hold","you","u","you're","sure","ur","you are"],
+            "your"   : ["uh uh","you are","uh huh","your","next","ur","sure","u","you're","you","what?","hold","like","done"],
+            "you're" : ["you","you're","ur","next","uh uh","you are","u","your","what?","uh huh","sure","done","like","hold"],
+            "ur"     : ["done","u","ur","uh huh","what?","sure","your","hold","you're","like","next","uh uh","you are","you"],
+            "u"      : ["uh huh","sure","next","what?","you're","ur","uh uh","done","u","you","like","hold","you are","your"],
+            "uh huh" : ["uh huh","your","you are","you","done","hold","uh uh","next","sure","like","you're","ur","u","what?"],
+            "uh uh"  : ["ur","u","you are","you're","next","uh uh","done","you","uh huh","like","your","sure","hold","what?"],
+            "what?"  : ["you","hold","you're","your","u","done","uh uh","like","you are","uh huh","ur","next","what?","sure"],
+            "done"   : ["sure","uh huh","next","what?","your","ur","you're","hold","like","you","u","you are","uh uh","done"],
+            "next"   : ["what?","uh huh","uh uh","your","hold","sure","next","like","done","you are","ur","you're","u","you"],
+            "hold"   : ["you are","u","done","uh uh","you","ur","sure","what?","you're","next","hold","uh huh","your","like"],
+            "sure"   : ["you are","done","like","you're","you","hold","uh huh","ur","sure","u","what?","next","your","uh uh"],
+            "like"   : ["you're","next","u","ur","hold","done","uh uh","what?","uh huh","you","like","sure","you are","your"]}
 
 def whos_help():
-    print("      Enter the header as-is. Then, enter the 6 words below in the following order:")
+    print("      First, enter the display as-is.")
+    print("      Then, enter the 6 words as-is, separated by commas (no spaces), in this order:")
     print("        |  1  |  4  |")
     print("        |  2  |  5  |")
     print("        |  3  |  6  |")
     print("      Type 'q' to quit.")
 
+def solve_whos(key, buttons):
+    try:
+        words = wordlist[key]
+        for w in words:
+            if w in buttons:
+                print("  " + w)
+                break
+    except:
+        print("  Invalid button entry!")
+
+
 def prompt_whos():
     quit = False
     while not quit:
-        user_input = input("  > {0:16}".format("Header:")).strip().lower()
+        user_input = input("  > {0:16}".format("Display:")).strip().lower()
         if user_input=="q":
             quit = True
         elif user_input=="help":
             whos_help()
         else:
-            user_input = input("  > {0:16}".format("Header:")).strip().lower()
-            
-            words = [c for c in user_input]
-            if len(wires)==3:
-                wire_3(wires)
-            elif len(wires)==4:
-                wire_4(wires)
-            elif len(wires)==5:
-                wire_5(wires)
-            elif len(wires)==6:
-                wire_6(wires)
+            try:
+                buttons = input("  > {0:16}".format("Buttons:")).strip().lower().split(",")
+                key = buttons[headers[user_input]]
+                solve_whos(key, buttons)
+            except:
+                print("  Invalid display entry!")
         print()

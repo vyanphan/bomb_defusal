@@ -112,7 +112,7 @@ def prompt_keypad():
         else:
             ans = keypad_solve(symbols)
             if ans==-1:
-                print("  Incorrect symbol code.")
+                print("  Incorrect symbol code!")
             else:
                 print("  " + ' '.join(ans))
         print()

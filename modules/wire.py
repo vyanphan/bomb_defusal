@@ -13,7 +13,7 @@ def wire_3(wires):
 
 def wire_4(wires):
     if prompt_serial_num()<0:
-        print("Invalid serial number!")
+        print("  Invalid serial number!")
     elif wires.count('r')>1 and prompt_serial_num()==1:
         print("  LAST RED")
     elif wires[-1]=='y' and wires.count('r')==0:
@@ -27,7 +27,7 @@ def wire_4(wires):
 
 def wire_5(wires):
     if prompt_serial_num()<0:
-        print("Invalid serial number!")
+        print("  Invalid serial number!")
     elif wires[-1]=='k' and prompt_serial_num()==1:
         print("  4TH")
     elif wires.count('r')==1 and wires.count('y')>1:
@@ -39,7 +39,7 @@ def wire_5(wires):
 
 def wire_6(wires):
     if prompt_serial_num()<0:
-        print("Invalid serial number!")
+        print("  Invalid serial number!")
     elif wires.count('y')==0 and prompt_serial_num()==1:
         print("  3RD")
     elif wires.count('y')==1 and wires.count('w')>1:

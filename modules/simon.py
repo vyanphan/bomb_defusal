@@ -19,7 +19,7 @@ def solve_simon(colors):
         ans = [color_map[c][i] for c in colors]
         print("  " + ' '.join(ans))
     except:
-        print("  Color code incorrect.")
+        print("  Incorrect color code!")
 
 def simon_help():
     print("      <c><c><c><c>")

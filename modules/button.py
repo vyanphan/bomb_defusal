@@ -31,7 +31,7 @@ def prompt_batteries():
             globvars.set_batteries(int(input("    {0:16}".format("#Batteries:")).strip().lower()))
         except:
             globvars.set_batteries(None)
-            print("  Invalid battery number")
+            print("  Invalid battery number!")
             return -1
     return globvars.get_batteries()
 
