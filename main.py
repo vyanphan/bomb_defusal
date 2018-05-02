@@ -23,11 +23,20 @@ cmds_list = [wire.prompt_wire,
              simon.prompt_simon]
 
 def help_main():
-    print("  Type 'q' within a module to quit that single module.")
-    print("  Type 'q' in the main prompt to exit the whole program.")
-    print("  Type 'help all' to view a list of the possible modules.")
-    print("  Type 'reset' within a module to clear saved information for that specific module.")
-    print("  Type 'reset' in the main prompt to reset all saved information.")
+    print("  Type the name of the module to get started.")
+    print("  Commands for the main prompt:")
+    print("    {0:10}{1}".format("q"       , "Quits the whole program."))
+    print("    {0:10}{1}".format("help"    , "Displays the general help menu."))
+    print("    {0:10}{1}".format("help all", "Lists all possible modules."))
+    print("    {0:10}{1}".format("reset"   , "Clears all saved information."))
+    print("  Commands for specific modules:")
+    print("    {0:10}{1}".format("q"       , "Quits the module and returns to the main menu."))
+    print("    {0:10}{1}".format("help"    , "Displays general help for that module."))
+    print("    {0:10}{1}".format("reset"   , "Clears saved information for that module only."))
+    print("  Saved information refers to items applying to the entire bomb, e.g.")
+    print("    number of batteries")
+    print("    serial number")
+    print("    number of strikes")
 
 def help_all():
     print("  {0:20}{1}".format("Module", "Synonyms"))

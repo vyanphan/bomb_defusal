@@ -33,13 +33,32 @@ activated and probably way better than this one.
 
 ### General
 - When prompted, type the name of the module.
-- To quit a module, or the entire program, type `q`.
-- For general help, type `help`. To see all possible modules, type `help all`.
-- To clear information already entered into a module, type `reset`.
-- Most inputs are not case-sensitive, but make sure to use the formats as described below.
+    ```
+    [MODULE] wire
+
+      > Color Codes:    rwyr
+        Serial#:        abc7
+      LAST RED
+
+      > Color Codes:    q
+    ```
+- Commands for the main prompt
+    | Command    | Action                       |
+    |------------|------------------------------|
+    | `q`        | Quits the whole program.     |
+    | `help`     | Displays general help.       |
+    | `help all` | Lists all possible modules.  |
+    | `reset`    | Clears all saved information.|
+- Commands for specific modules 
+    | Command    | Action                                        |
+    |------------|-----------------------------------------------|
+    | `q`        | Quits the module and returns to the main menu.|
+    | `help`     | Displays general help for that module.        |
+    | `help all` | Lists all possible modules.                   |
+    | `reset`    | Clears saved information for that module only.|
 
 ### On the Subject of Wires
-- When the prompt appears, enter the color codes of the wires in (no spaces).
+- When the prompt appears, enter the color codes of the wires without spaces.
     ```
     Simple Wires
     > Color codes:  rwyr
@@ -47,6 +66,7 @@ activated and probably way better than this one.
     2ND    
     ```
 - Type `help` to see the color codes for each wire.
+
     | Color  | Code |
     |--------|------|
     | Blue   | B    |
@@ -67,6 +87,7 @@ activated and probably way better than this one.
     PRESS AND IMMEDIATELY RELEASE
     ```
 - Type `help` to see the color codes for the button. Enter the button label as-is.
+
     | Color  | Code |
     |--------|------|
     | Blue   | B    |
@@ -101,3 +122,6 @@ activated and probably way better than this one.
         .)    .) c c. dot backwards greek lunate sigma
     ```
 - Type `q` to quit.
+
+### On the Subject of Simon Says
+- When the prompt appears, enter the color codes of the 
