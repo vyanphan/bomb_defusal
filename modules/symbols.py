@@ -55,9 +55,10 @@ def parse_input(user_input):
         return None
     elif symbols[0].lower()=='help':
         if len(symbols)==1 :
-            print("    Enter symbol codes separated by spaces (in any order).")
-            print("    Type \"help all\" to see the full list of symbol codes.")
-            print("    Type \"help <item>\" to find specific terms; separate tags with spaces.")
+            print("      Enter symbol codes separated by spaces (in any order).")
+            print("      Type q to quit module.")
+            print("      Type 'help all' to see the full list of symbol codes.")
+            print("      Type 'help <item>' to find specific terms; separate tags with spaces.")
         elif symbols[1].lower()=='all':
             symbols_help(None)
         else:

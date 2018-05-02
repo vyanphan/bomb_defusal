@@ -6,6 +6,12 @@ color_mapping = {'r': ('b', 'y', 'g', 'b', 'r', 'y'),
                  'g': ('y', 'b', 'y', 'g', 'y', 'b'),
                  'y': ('g', 'r', 'b', 'r', 'g', 'r')}
 
+def map_position(num_strikes):
+    sn = global_vars.get_serial_num()
+    if 'a' in sn or 'e' in sn or 'i' in sn or 'o' in sn or 'u' in sn:
+        return num_strikes
+    else:
+        return num_strikes + 3
 
 def prompt_simon():
     quit = False
@@ -22,7 +28,13 @@ def prompt_simon():
             global_vars.set_serial_num(None)
         else:
             colors = [c for c in user_input]
-            num_strikes = input("    Number of Strikes:\t").lower()
+            try:
+                num_strikes = int(input("    Number of Strikes:\t"))
+            except BaseException:
+                global_vars.set_serial_num(None)
+                global_vars.set_last_digit(None)
+                print("  Invalid serial number!")
+
             if global_vars.get_serial_num()==None:
                 global_vars.set_serial_num(input("    Serial Number:\t").lower())
 

@@ -45,7 +45,7 @@ def wires_6(wires):
 
 def prompt_serial_num():
     if global_vars.get_serial_num()==None:
-        global_vars.set_serial_num(input("    Serial Number:\t").lower())
+        global_vars.set_serial_num(input("    {0:16}".format("Serial#:")).lower())
     if global_vars.get_last_digit()==None:
         try:
             global_vars.set_last_digit(int(global_vars.get_serial_num()[-1:]))
@@ -59,10 +59,11 @@ def prompt_serial_num():
 def prompt_simple_wires():
     quit = False
     while not quit:
-        user_input = input("  > Color Codes:\t").lower()
+        user_input = input("  > {0:16}".format("Color Codes:")).lower()
         if user_input=="q":
             quit = True
         elif user_input=="help":
+            print("      Type 'q' to quit or 'reset' to clear serial number.")
             print("      Red      r")
             print("      Blue     b")
             print("      Yellow   y")
