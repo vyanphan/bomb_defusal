@@ -1,6 +1,25 @@
 Keep Talking and Nobody Explodes
 =================================
 
+
+## Table of Contents
+- [About]
+- [Installation]
+- [Instructions]
+    - [General]
+    - [On the Subject of Wires](#on-the-subject-of-wires)
+    - [On the Subject of The Button](#on-the-subject-of-the-button)
+    - [On the Subject of Keypads](#on-the-subject-of-keypads)
+    - [On the Subject of Simon Says](#on-the-subject-of-simon-says)
+    - [On the Subject of Who's on First](#on-the-subject-of-whos-on-first)
+    - [On the Subject of Memory](#on-the-subject-of-memory)
+    - [On the Subject of Morse Code](#on-the-subject-of-morse-code)
+    - [On the Subject of Complicated Wires](#on-the-subject-of-complicated-wires)
+    - [On the Subject of Wire Sequences](#on-the-subject-of-wire-sequences)
+    - [On the Subject of Mazes](#on-the-subject-of-mazes)
+    - [On the Subject of Passwords](#on-the-subject-of-passwords)
+    - [On the Subject of Knobs](#on-the-subject-of-knobs)
+
 ## About
 
 Keep Talking and Nobody Explodes is a logic-based game where one has to defuse a bomb by solving
@@ -23,13 +42,14 @@ read aloud the outputs for you. Or just use the other bot that someone on YouTub
 activated and probably way better than this one.
 
 
-## Instructions
-
-### Installation
+## Installation
 - [Python 3](https://www.python.org/downloads/) is required. Install that first if you do not
   already have it.
 - Clone this repository and use your preferred terminal to navigate to the location of the folder.
 - Run `python3 main.py` to start the program.
+
+
+## Instructions
 
 ### General
 - When prompted, type the name of the module.
@@ -56,7 +76,6 @@ activated and probably way better than this one.
     |------------|-----------------------------------------------|
     | `q`        | Quits the module and returns to the main menu.|
     | `help`     | Displays general help for that module.        |
-    | `help all` | Lists all possible modules.                   |
     | `reset`    | Clears saved information for that module only.|
 - "Saved information" refers to items applying to the entire bomb, e.g.
     - number of batteries
@@ -146,3 +165,19 @@ activated and probably way better than this one.
 - If the prompt asks `Serial#` simply enter the serial number as shown on the bomb.
 - Type `set <i>` to set a new number of `strikes`. For example, type `set 0` to clear `strikes`.
 - Type `q` to quit. Type `reset` to clear `Serial#` ONLY.
+
+### On the Subject of Who's on First
+
+### On the Subject of Memory
+
+### On the Subject of Morse Code
+
+### On the Subject of Complicated Wires
+
+### On the Subject of Wire Sequences
+
+### On the Subject of Mazes
+
+### On the Subject of Passwords
+
+### On the Subject of Knobs
