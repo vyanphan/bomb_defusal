@@ -37,7 +37,7 @@ def prompt_batteries():
 
 def prompt_indicator():
     if globvars.get_indicator()==None:
-        globvars.set_indicator(input("    {0:16}".format("Indicator:")).strip().upper())
+        globvars.set_indicator(input("    {0:16}".format("Indicator:")).strip().upper().split(' '))
     return globvars.get_indicator()
 
 def button_help():
@@ -48,7 +48,8 @@ def button_help():
     print("        {0:17}{1}".format("Yellow", "y"))
     print("        {0:17}{1}".format("White", "w"))
     print("        {0:17}{1}".format("Any other color", "x"))
-    print("      Enter a number for #Batteries. Enter Indicator label as-is.")
+    print("      Enter a number for #Batteries.")
+    print("      Enter all Indicator labels as-is, separated by spaces.")
     print("      Type 'q' to quit or 'reset' to clear #Batteries and Indicator.")
 
 def prompt_button():
@@ -72,9 +73,9 @@ def prompt_button():
                 pass
             elif label=='detonate' and prompt_batteries()>1:
                 print("  PRESS AND IMMEDIATELY RELEASE")
-            elif color=='w' and prompt_indicator()=="CAR":
+            elif color=='w' and "CAR" in prompt_indicator():
                 prompt_held_button()
-            elif prompt_batteries()>2 and prompt_indicator()=="FRK":
+            elif prompt_batteries()>2 and "FRK" in prompt_indicator():
                 print("  PRESS AND IMMEDIATELY RELEASE")
             elif color=='y':
                 prompt_held_button()

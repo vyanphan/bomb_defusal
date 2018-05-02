@@ -58,7 +58,7 @@ wordlist = {"ready"  : ["YES","OKAY","WHAT","MIDDLE","LEFT","PRESS","RIGHT","BLA
             "sure"   : ["YOU ARE","DONE","LIKE","YOU'RE","YOU","HOLD","UH HUH","UR","SURE","U","WHAT?","NEXT","YOUR","UH UH"],
             "like"   : ["YOU'RE","NEXT","U","UR","HOLD","DONE","UH UH","WHAT?","UH HUH","YOU","LIKE","SURE","YOU ARE","YOUR"]}
 
-def wires_help():
+def whos_help():
     print("      Enter the header as-is. Then, enter the 6 words below in the following order:")
     print("        |  1  |  4  |")
     print("        |  2  |  5  |")
@@ -66,4 +66,23 @@ def wires_help():
     print("      Type 'q' to quit.")
 
 def prompt_whos():
-    pass
+    quit = False
+    while not quit:
+        user_input = input("  > {0:16}".format("Header:")).strip().lower()
+        if user_input=="q":
+            quit = True
+        elif user_input=="help":
+            whos_help()
+        else:
+            user_input = input("  > {0:16}".format("Header:")).strip().lower()
+            
+            words = [c for c in user_input]
+            if len(wires)==3:
+                wire_3(wires)
+            elif len(wires)==4:
+                wire_4(wires)
+            elif len(wires)==5:
+                wire_5(wires)
+            elif len(wires)==6:
+                wire_6(wires)
+        print()

@@ -120,8 +120,8 @@ activated and probably way better than this one.
     | Yellow          | Y    |
     | White           | W    |
     | Any other color | X    |
-- If the prompt asks `#Batteries` enter the number of batteries around the bomb. If the prompt
-  asks `Indicator` enter the label by the lit indicator (e.g. `CAR`, `FRK`).
+- If the prompt asks `#Batteries` enter the number of batteries around the bomb.
+- If the prompt asks `Indicator` enter all lit indicators (e.g. `CAR`, `FRK`), separated by spaces.
 - Type `q` to quit. Type `reset` to clear `#Batteries` and `Indicator` if you entered either wrong.
 
 ### On the Subject of Keypads
