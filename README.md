@@ -225,6 +225,19 @@ activated and probably way better than this one.
 - Type `q` to quit.
 
 ### On the Subject of Morse Code
+- When the prompt appears, enter the morse signal. Use `-` for a dash and `.` for a dot. Separate
+  letters with spaces. Note that only the first 3 letters are required for a unique answer.
+    ```
+    [MODULE] morse
+
+      > Morse Code:     ..-. .-.. .. -.-. -.-
+      3.555 MHz
+
+      > Morse Code:     ..-. .-.. ..
+      3.555 MHz 
+    ```
+- Type `help` to see more information about the module.
+- Type `q` to quit.
 
 ### On the Subject of Complicated Wires
 

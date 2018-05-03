@@ -45,7 +45,10 @@ freq_dict = {'she': '  3.505 MHz',
              'bea': '  3.600 MHz'}
 
 def morse_help():
-    pass
+    print("      <m> <m> <m>")
+    print("      Enter '-' for dash and '.' for dot. Separate letters with spaces.")
+    print("      Only the first 3 letters are required for a unique answer.")
+    print("      Type 'q' to quit.")
 
 def prompt_morse():
     quit = False
