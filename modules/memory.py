@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
 
 '''
-<display> <b><b><b><b>
-> Stage 1: 5 1234
+<display><b><b><b><b>
+> Stage 1: 51234
     0   = display1
     []  = buttons1
     i   = prespos1
@@ -18,6 +18,21 @@ Will automatically reset all at stage 5.
 '''
 
 
+def stage1_solve():
+    pass
+
+def stage2_solve():
+    pass
+
+def stage3_solve():
+    pass
+
+def stage4_solve():
+    pass
+
+def stage5_solve():
+    pass
+
 def memory_help():
     pass
 
@@ -32,6 +47,15 @@ def prompt_memory():
             memory_help()
         elif user_input=="reset":
             stage = max(1, stage-1)
-        else:
+        elif user_input=="reset all":
             pass
-        print()
+        else:
+            
+            
+
+
+            stage = min(5, stage+1)
+        
+        if stage==5:
+            # reset all
+            print()
