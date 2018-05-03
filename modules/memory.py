@@ -32,7 +32,7 @@ def stage2_solve(buttons):
     elif buttons[0]=='2' or buttons[0]=='4':
         return buttons[stages[1][2]], stages[1][2]
     elif buttons[0]=='3':
-        return button[1], 1
+        return buttons[1], 1
 
 def stage3_solve(buttons):
     if buttons[0]=='1':
@@ -77,6 +77,8 @@ def prompt_memory():
     while not quit:
         if stage==1:
             user_input = input("  > {0:16}".format("Stage "+ str(stage) +":")).strip().lower()
+        elif stage==6:
+            user_input = input("    {0:16}".format("End:")).strip().lower()
         else:
             user_input = input("    {0:16}".format("Stage "+ str(stage) +":")).strip().lower()
 
@@ -90,7 +92,10 @@ def prompt_memory():
                 print()
         elif user_input=="reset all":
             stage = 6
-        else:
+        elif stage==6:
+            stage += 1
+
+        elif stage>0 and stage<6:
             s = stages[stage]
             s[0] = [c for c in user_input]
             if len(s[0])!=5:
@@ -99,6 +104,7 @@ def prompt_memory():
                 s[1], s[2] = s[3](s[0])
                 print("      " + s[1])
                 stage += 1
-        if stage>5:
+        
+        if stage>6:
             stage = 1
             print()
