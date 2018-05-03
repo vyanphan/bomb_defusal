@@ -44,5 +44,19 @@ freq_dict = {'she': '  3.505 MHz',
              'vec': '  3.595 MHz',
              'bea': '  3.600 MHz'}
 
-def prompt_morse():
+def morse_help():
     pass
+
+def prompt_morse():
+    quit = False
+    while not quit:
+        user_input = input("  > {0:16}".format("Morse Code:")).strip().lower()
+        if user_input=="q":
+            quit = True
+        elif user_input=="help":
+            morse_help()
+        else:
+            morse = user_input.split(' ')[:3]
+            word = ''.join([morse_dict[m] for m in morse])
+            print(freq_dict[word])
+        print()
