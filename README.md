@@ -192,6 +192,37 @@ activated and probably way better than this one.
 - Type `q` to quit.
 
 ### On the Subject of Memory
+- When the prompt appears, enter the number on the display, then the numbers on the buttons from
+  left to right (no spaces between any of them).
+    ```
+    [MODULE] memory
+
+      > Stage 1:        12341
+          3
+        Stage 2:        12341
+          4
+        Stage 3:        12341
+          4
+        Stage 4:        12341
+          3
+        Stage 5:        12341
+          3
+        End:
+    ```
+- Type `help` to see more information about the module.
+- Type `reset` to move back a stage. The `End` stage is for if you want to reset to `Stage 5`.
+    ```
+    [MODULE] memory
+
+      > Stage 1:        12341
+          3
+        Stage 2:        12341
+          4
+        Stage 3:        reset
+        Stage 2:
+    ```
+- Type `reset all`, or `y` during the `End` stage, to clear all memory and return to `Stage 1`.
+- Type `q` to quit.
 
 ### On the Subject of Morse Code
 

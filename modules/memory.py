@@ -1,23 +1,5 @@
 #!/usr/bin/env python3
 
-'''
-<display><b><b><b><b>
-> Stage 1: 41234
-    0   = display1
-    []  = buttons1
-    i   = prespos1
-    n   = preslab1
-  Stage 2:
-  Stage 3:
-  Stage 4:
-  Stage 5:
-
-Reset clears current stage.
-Reset all clears everything and returns to stage 1.
-Will automatically reset all at stage 5.
-'''
-
-
 def stage1_solve(buttons):
     if buttons[0]=='1' or buttons[0]=='2':
         return buttons[2], 2
@@ -62,8 +44,13 @@ def stage5_solve(buttons):
     elif buttons[0]=='4':
         return stages[3][1], buttons.index(stages[3][1])
 
-def memory_help(buttons):
-    pass
+def memory_help():
+    print("      <#><#><#><#><#>")
+    print("      Enter the display, then the buttons from left to right, no spaces.")
+    print("      Type 'reset' to move back a stage. Type 'reset all' to return back to Stage 1.")
+    print("      When in the 'End' stage, type 'y' to 'reset all' (to a fresh memory module).")
+    print("      Type 'q' to quit.")
+    print()
 
 stages = {1: [[], 0, -1, stage1_solve],
           2: [[], 0, -1, stage2_solve],
@@ -91,10 +78,9 @@ def prompt_memory():
             if stage==1:
                 print()
         elif user_input=="reset all":
-            stage = 6
-        elif stage==6:
+            stage = 7
+        elif stage==6 and user_input=="y":
             stage += 1
-
         elif stage>0 and stage<6:
             s = stages[stage]
             s[0] = [c for c in user_input]
@@ -104,7 +90,7 @@ def prompt_memory():
                 s[1], s[2] = s[3](s[0])
                 print("      " + s[1])
                 stage += 1
-        
+
         if stage>6:
             stage = 1
             print()
