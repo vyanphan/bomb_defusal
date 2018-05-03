@@ -30,33 +30,40 @@ def stage2_solve(buttons):
     if buttons[0]=='1':
         return '4', buttons.index('4')
     elif buttons[0]=='2' or buttons[0]=='4':
-        return stages[1][1]
+        return buttons[stages[1][2]], stages[1][2]
     elif buttons[0]=='3':
-        return 1
+        return button[1], 1
 
 def stage3_solve(buttons):
     if buttons[0]=='1':
+        return stages[2][1], buttons.index(stages[2][1])
     elif buttons[0]=='2':
+        return stages[1][1], buttons.index(stages[1][1])
     elif buttons[0]=='3':
+        return buttons[3], 3
     elif buttons[0]=='4':
+        return '4', buttons.index('4')
 
 def stage4_solve(buttons):
     if buttons[0]=='1':
+        return buttons[stages[1][2]], stages[1][2]
     elif buttons[0]=='2':
-    elif buttons[0]=='3':
-    elif buttons[0]=='4':
+        return buttons[1], 1
+    elif buttons[0]=='3' or buttons[0]=='4':
+        return buttons[stages[2][2]], stages[2][2]
 
 def stage5_solve(buttons):
     if buttons[0]=='1':
+        return stages[1][1], buttons.index(stages[1][1])
     elif buttons[0]=='2':
+        return stages[2][1], buttons.index(stages[2][1])
     elif buttons[0]=='3':
+        return stages[4][1], buttons.index(stages[4][1])
     elif buttons[0]=='4':
+        return stages[3][1], buttons.index(stages[3][1])
 
 def memory_help(buttons):
-    if buttons[0]=='1':
-    elif buttons[0]=='2':
-    elif buttons[0]=='3':
-    elif buttons[0]=='4':
+    pass
 
 stages = {1: [[], 0, -1, stage1_solve],
           2: [[], 0, -1, stage2_solve],
@@ -92,7 +99,6 @@ def prompt_memory():
                 s[1], s[2] = s[3](s[0])
                 print("      " + s[1])
                 stage += 1
-        
         if stage>5:
             stage = 1
             print()
