@@ -12,9 +12,26 @@
   Stage 4:
   Stage 5:
 
-Reset clears everything and returns to stage 1.
-Will automatically reset at stage 5.
+Reset clears current stage.
+Reset all clears everything and returns to stage 1.
+Will automatically reset all at stage 5.
 '''
 
-def prompt_memory():
+
+def memory_help():
     pass
+
+def prompt_memory():
+    quit = False
+    stage = 1
+    while not quit:
+        user_input = input("  > {0:16}".format("Stage "+ str(stage) +":")).strip().lower()
+        if user_input=="q":
+            quit = True
+        elif user_input=="help":
+            memory_help()
+        elif user_input=="reset":
+            stage = max(1, stage-1)
+        else:
+            pass
+        print()

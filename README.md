@@ -56,9 +56,9 @@ activated and probably way better than this one.
     ```
     [MODULE] wire
 
-      > Color Codes:    rwyr
-        Serial#:        abc7
-      LAST RED
+      > Color codes:  rwyr
+        Serial#:      d7089c2
+      2ND
 
       > Color Codes:    q
     ```
@@ -85,10 +85,11 @@ activated and probably way better than this one.
 ### On the Subject of Wires
 - When the prompt appears, enter the color codes of the wires without spaces.
     ```
-    Simple Wires
-    > Color codes:  rwyr
-      Serial#:      d7089c2
-    2ND    
+    [MODULE] wire
+
+      > Color codes:  rwyr
+        Serial#:      d7089c2
+      2ND
     ```
 - Type `help` to see the color codes for each wire.
 
@@ -106,10 +107,12 @@ activated and probably way better than this one.
 - When the prompt appears, enter the color code and the button label as-is, with one space in
   between them.
     ```
-    > Color Label:  r abort
-      #Batteries:   3
-      Indicator:    frk
-    PRESS AND IMMEDIATELY RELEASE
+    [MODULE] button
+
+      > Color Label:  r abort
+        #Batteries:   3
+        Indicator:    frk
+      PRESS AND IMMEDIATELY RELEASE
     ```
 - Type `help` to see the color codes for the button. Enter the button label as-is.
 
@@ -127,8 +130,10 @@ activated and probably way better than this one.
 ### On the Subject of Keypads
 - When the prompt appears, enter the symbol codes of the buttons separated by spaces.
     ```
-    > Symbols:      * .) O ?
-    O .) * ?
+    [MODULE] keypad
+
+      > Symbols:      * .) O ?
+      O .) * ?
     ```
 - Type `help all` to see all the symbol codes. On the right will be a description of the symbol,
   and on the left will be the symbol code you should enter.
@@ -151,8 +156,10 @@ activated and probably way better than this one.
 ### On the Subject of Simon Says
 - When the prompt appears, enter the color codes of the flashing lights without spaces.
     ```
-    > Color Codes:    rgby
-    b y r g
+    [MODULE] simon
+
+      > Color Codes:    rgby
+      b y r g
     ```
 - Type `help` to see the color codes for each button.
 
@@ -169,9 +176,11 @@ activated and probably way better than this one.
 ### On the Subject of Who's on First
 - When the prompt appears, enter the display as-is, then the 6 words as-is, separated by commas.
     ```
-    > Display:        your
-      Buttons:        like,you are,what?,uh uh,right,you're
-    RIGHT
+    [MODULE] whos
+
+      > Display:        your
+        Buttons:        like,you are,what?,uh uh,right,you're
+      RIGHT
     ```
 - Type `help` to see the order in which to enter the 6 words on the buttons:
 
