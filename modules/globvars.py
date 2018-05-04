@@ -18,6 +18,7 @@ def set_serial_num(sn):
     serial_num = sn
 
 def get_last_digit():
+    global serial_num
     global last_digit
     if last_digit==None:
         try:

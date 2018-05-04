@@ -49,8 +49,6 @@ def prompt_simon():
                 print("  Invalid number of strikes!")
         else:
             colors = [c for c in user_input]
-            if globvars.get_serial_num()==None:
-                globvars.set_serial_num(input("    {0:16}".format("Serial#:")).strip().lower())
             solve_simon(colors)
         print()
         

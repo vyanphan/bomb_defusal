@@ -14,7 +14,7 @@ def wire_3(wires):
 def wire_4(wires):
     if globvars.get_last_digit()<0:
         print("  Invalid serial number!")
-    elif wires.count('r')>1 and globvars.get_last_digit()==1:
+    elif wires.count('r')>1 and globvars.get_last_digit()%2==1:
         print("  LAST RED")
     elif wires[-1]=='y' and wires.count('r')==0:
         print("  1ST")
@@ -28,7 +28,7 @@ def wire_4(wires):
 def wire_5(wires):
     if globvars.get_last_digit()<0:
         print("  Invalid serial number!")
-    elif wires[-1]=='k' and globvars.get_last_digit()==1:
+    elif wires[-1]=='k' and globvars.get_last_digit()%2==1:
         print("  4TH")
     elif wires.count('r')==1 and wires.count('y')>1:
         print("  1ST")
@@ -40,7 +40,7 @@ def wire_5(wires):
 def wire_6(wires):
     if globvars.get_last_digit()<0:
         print("  Invalid serial number!")
-    elif wires.count('y')==0 and globvars.get_last_digit()==1:
+    elif wires.count('y')==0 and globvars.get_last_digit()%2==1:
         print("  3RD")
     elif wires.count('y')==1 and wires.count('w')>1:
         print("  4TH")
