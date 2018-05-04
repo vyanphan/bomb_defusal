@@ -25,21 +25,6 @@ def prompt_held_button():
     print("    {0:8}{1}".format("Yellow", "5"))
     print("    {0:8}{1}".format("Other", "1"))
 
-def prompt_batteries():
-    if globvars.get_batteries()==None:
-        try:
-            globvars.set_batteries(int(input("    {0:16}".format("#Batteries:")).strip().lower()))
-        except:
-            globvars.set_batteries(None)
-            print("  Invalid battery number!")
-            return -1
-    return globvars.get_batteries()
-
-def prompt_indicator():
-    if globvars.get_indicator()==None:
-        globvars.set_indicator(input("    {0:16}".format("Indicator:")).strip().upper().split(' '))
-    return globvars.get_indicator()
-
 def button_help():
     print("      <c> <label>")
     print("      Enter color code according to the table, 1 space, then button label as-is.")
@@ -69,13 +54,13 @@ def prompt_button():
                 pass
             elif color=='b' and label=='abort':
                 prompt_held_button()
-            elif prompt_batteries()==-1:
-                pass
-            elif label=='detonate' and prompt_batteries()>1:
+            elif globvars.get_batteries()==-1:
+                print("  Invalid battery number!")
+            elif label=='detonate' and globvars.get_batteries()>1:
                 print("  PRESS AND IMMEDIATELY RELEASE")
-            elif color=='w' and "CAR" in prompt_indicator():
+            elif color=='w' and "CAR" in globvars.get_indicator():
                 prompt_held_button()
-            elif prompt_batteries()>2 and "FRK" in prompt_indicator():
+            elif globvars.get_batteries()>2 and "FRK" in globvars.get_indicator():
                 print("  PRESS AND IMMEDIATELY RELEASE")
             elif color=='y':
                 prompt_held_button()

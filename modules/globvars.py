@@ -34,6 +34,13 @@ def set_last_digit(ld):
     last_digit = ld
 
 def get_batteries():
+    global batteries
+    if batteries==None:
+        try:
+            batteries = int(input("    {0:16}".format("#Batteries:")).strip().lower())
+        except:
+            batteries = None
+            return -1
     return batteries
 
 def set_batteries(b):
@@ -41,6 +48,9 @@ def set_batteries(b):
     batteries = b
 
 def get_indicator():
+    global indicator
+    if indicator==None:
+        indicator = input("    {0:16}".format("Indicator:")).strip().upper().split(' ')
     return indicator
 
 def set_indicator(i):
