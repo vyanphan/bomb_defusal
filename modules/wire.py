@@ -12,9 +12,9 @@ def wire_3(wires):
         print("  LAST")
 
 def wire_4(wires):
-    if prompt_serial_num()<0:
+    if globvars.get_last_digit()<0:
         print("  Invalid serial number!")
-    elif wires.count('r')>1 and prompt_serial_num()==1:
+    elif wires.count('r')>1 and globvars.get_last_digit()==1:
         print("  LAST RED")
     elif wires[-1]=='y' and wires.count('r')==0:
         print("  1ST")
@@ -26,9 +26,9 @@ def wire_4(wires):
         print("  2ND")
 
 def wire_5(wires):
-    if prompt_serial_num()<0:
+    if globvars.get_last_digit()<0:
         print("  Invalid serial number!")
-    elif wires[-1]=='k' and prompt_serial_num()==1:
+    elif wires[-1]=='k' and globvars.get_last_digit()==1:
         print("  4TH")
     elif wires.count('r')==1 and wires.count('y')>1:
         print("  1ST")
@@ -38,9 +38,9 @@ def wire_5(wires):
         print("  1ST")
 
 def wire_6(wires):
-    if prompt_serial_num()<0:
+    if globvars.get_last_digit()<0:
         print("  Invalid serial number!")
-    elif wires.count('y')==0 and prompt_serial_num()==1:
+    elif wires.count('y')==0 and globvars.get_last_digit()==1:
         print("  3RD")
     elif wires.count('y')==1 and wires.count('w')>1:
         print("  4TH")
@@ -48,18 +48,6 @@ def wire_6(wires):
         print("  LAST")
     else:
         print("  4TH")
-
-def prompt_serial_num():
-    if globvars.get_serial_num()==None:
-        globvars.set_serial_num(input("    {0:16}".format("Serial#:")).strip().lower())
-    if globvars.get_last_digit()==None:
-        try:
-            globvars.set_last_digit(int(globvars.get_serial_num()[-1:]))
-        except BaseException:
-            globvars.set_serial_num(None)
-            globvars.set_last_digit(None)
-            return -1
-    return globvars.get_last_digit()%2
 
 def wire_help():
     print("      <c><c><c>...<c>")

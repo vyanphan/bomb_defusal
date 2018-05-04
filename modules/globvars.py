@@ -8,6 +8,9 @@ strikes    = 0
 all_vars = [serial_num, last_digit, batteries, indicator]
 
 def get_serial_num():
+    global serial_num
+    if serial_num==None:
+        serial_num = input("    {0:16}".format("Serial#:")).strip().lower()
     return serial_num
 
 def set_serial_num(sn):
@@ -15,6 +18,14 @@ def set_serial_num(sn):
     serial_num = sn
 
 def get_last_digit():
+    global last_digit
+    if last_digit==None:
+        try:
+            last_digit = int(get_serial_num()[-1:])
+        except BaseException:
+            serial_num = None
+            last_digit = None
+            return -1
     return last_digit
 
 def set_last_digit(ld):
