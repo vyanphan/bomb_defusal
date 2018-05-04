@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+from modules import globvars
 
 '''
     lrb*        = light red blue star
@@ -27,5 +28,40 @@ actions = {'0000': True,
            '1110': get_last_digit()%2==0,
            '1111': False}
 
-def prompt_complicated():
+def complicated_help():
     pass
+
+def search(x, code):
+    if x in code:
+        return '1'
+    else:
+        return '0'
+
+def translate(code):
+    key = search('l', code)
+    key += search('r', code)
+    key += search('b', code)
+    key += search('*', code)
+    if actions[key]:
+        return 'X'
+    else:
+        return '_'
+
+
+def prompt_complicated():
+    quit = False
+    while not quit:
+        user_input = input("  > {0:16}".format("Wire Codes:")).strip().lower()
+        if user_input=="q":
+            quit = True
+        elif user_input=="help":
+            complicated_help()
+        elif user_input=="reset":
+            globvars.set_serial_num(None)
+            globvars.set_last_digit(None)
+            globvars.set_batteries(None)
+            globvars.set_parallel_port(None)
+        else:
+            wires = [translate(c) for c in user_input.split(' ')]
+            print("  " + ' '.join(wires))
+        print()
