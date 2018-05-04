@@ -11,7 +11,22 @@ from modules import globvars
     CUT 1 4 5 
 '''
 
-actions = {'0000': True,
+def ret_true():
+    return True
+
+def ret_false():
+    return False
+
+def ret_last_digit():
+    return globvars.get_last_digit()%2==0
+
+def ret_batteries():
+    return globvars.get_batteries()>1
+
+def ret_parallel_port():
+    return globvars.get_parallel_port()
+
+actions = {'0000': ret_true,
            '0001': True,
            '0010': globvars.get_last_digit()%2==0,
            '0011': False,

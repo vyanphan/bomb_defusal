@@ -74,7 +74,7 @@ def get_parallel_port():
             parallel_port = True
         elif user_input=='n' or user_input=='no' or user_input=='f' or user_input=='false':
             parallel_port = False
-        else
+        else:
             parallel_port = None
             print("  Input must be yes or no!")
     return parallel_port
