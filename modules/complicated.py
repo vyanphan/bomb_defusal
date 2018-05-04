@@ -27,21 +27,21 @@ def ret_parallel_port():
     return globvars.get_parallel_port()
 
 actions = {'0000': ret_true,
-           '0001': True,
-           '0010': globvars.get_last_digit()%2==0,
-           '0011': False,
-           '0100': globvars.get_last_digit()%2==0,
-           '0101': True,
-           '0110': globvars.get_last_digit()%2==0,
-           '0111': globvars.get_parallel_port(),
-           '1000': False,
-           '1001': globvars.get_batteries()>1,
-           '1010': globvars.get_parallel_port(),
-           '1011': globvars.get_parallel_port(),
-           '1100': globvars.get_batteries()>1,
-           '1101': globvars.get_batteries()>1,
-           '1110': globvars.get_last_digit()%2==0,
-           '1111': False}
+           '0001': ret_true,
+           '0010': ret_last_digit,
+           '0011': ret_false,
+           '0100': ret_last_digit,
+           '0101': ret_true,
+           '0110': ret_last_digit,
+           '0111': ret_parallel_port,
+           '1000': ret_false,
+           '1001': ret_batteries,
+           '1010': ret_parallel_port,
+           '1011': ret_parallel_port,
+           '1100': ret_batteries,
+           '1101': ret_batteries,
+           '1110': ret_last_digit,
+           '1111': ret_false}
 
 def complicated_help():
     pass
@@ -53,11 +53,14 @@ def search(x, code):
         return '0'
 
 def translate(code):
-    key = search('l', code)
-    key += search('r', code)
-    key += search('b', code)
-    key += search('*', code)
-    if actions[key]:
+    if code=='-':
+        key = '0000'
+    else:
+        key = search('l', code)
+        key += search('r', code)
+        key += search('b', code)
+        key += search('*', code)
+    if actions[key]():
         return 'X'
     else:
         return '_'
