@@ -240,6 +240,29 @@ activated and probably way better than this one.
 - Type `q` to quit.
 
 ### On the Subject of Complicated Wires
+- When the prompt appears, enter the wire codes, separated by spaces.
+    ```
+    [MODULE] hard
+
+      > Wire Codes:     - lrb* lb lr lrb
+        Parallel port:  n
+        #Batteries:     1
+        Serial#:        abc7
+      X _ _ _ _
+    ```
+- Type `help` to see the wire codes. If none of the below apply, type `-`.
+
+    | Wire has...     | Code |
+    |-----------------|------|
+    | LED             | l    |
+    | red             | r    |
+    | blue            | b    |
+    | star            | *    |
+- If the prompt asks `Parallel port` enter `y` (`yes`, `t`, `true`) or `n` (`no`, `f`, `false`).
+- If the prompt asks `#Batteries` enter the number of batteries around the bomb.
+- If the prompt asks `Serial#` enter the serial number as-is.
+- Type `q` to quit. Type `reset` to clear `Parallel port`, `#Batteries`, and `Serial#`.
+
 
 ### On the Subject of Wire Sequences
 

@@ -1,16 +1,6 @@
 #!/usr/bin/env python3
 from modules import globvars
 
-'''
-    lrb*        = light red blue star
-    (1 1 1 1)   = 15 = D
-    r*          = red star
-    (0 1 0 1)   =  5 = C
- 
-    > lrb* r* b*
-    CUT 1 4 5 
-'''
-
 def ret_true():
     return True
 
@@ -44,7 +34,16 @@ actions = {'0000': ret_true,
            '1111': ret_false}
 
 def complicated_help():
-    pass
+    print("      <n><n><n> <n><n><n>...")
+    print("      Enter the wire codes, separated by spaces. If none of the below apply, type '-'.")
+    print("        LED      l")
+    print("        Red      r")
+    print("        Blue     b")
+    print("        Star     *")
+    print("      Enter 'y' or 'n' for 'Parallel port'.")
+    print("      Enter a number for #Batteries.")
+    print("      If asked for 'Serial#', enter serial number as-is.")
+    print("      Type 'q' to quit or 'reset' to clear Parallel port, #Batteries, and Serial#.")
 
 def search(x, code):
     if x in code:

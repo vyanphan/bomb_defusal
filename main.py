@@ -77,10 +77,10 @@ def prompt_main():
         if user_input=="q":
             quit = True
         else:
-            # try:
-            commands[user_input]()
-            # except BaseException:
-            #     print("Module does not exist.")
+            try:
+                commands[user_input]()
+            except BaseException:
+                print("Module does not exist.")
         print()
 
 prompt_main()
