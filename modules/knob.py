@@ -23,4 +23,16 @@ pos_dict = {'1101': 'UP',
             '1110': 'RIGHT'}
 
 def prompt_knob():
-    pass
+    quit = False
+    while not quit:
+        user_input = input("  > {0:16}".format("LEDs:")).strip().lower()
+        if user_input=="q":
+            quit = True
+        elif user_input=="help":
+            wire_help()
+        else:
+            try:
+                print('  ' + pos_dict[user_input])
+            else:
+                print('  Invalid LED positions!')
+        print()

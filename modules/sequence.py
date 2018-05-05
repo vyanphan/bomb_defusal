@@ -53,6 +53,8 @@ def translate(c):
     global numRed, numBlue, numBlack
     if len(c)!=2:
         print("  Invalid wire code!")
+    elif numRed>8 or numBlue>8 or numBlack>8:
+        print("  Reset your wires!")
     else:
         if c[0]=='r':
             numRed += 1
