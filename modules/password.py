@@ -26,13 +26,16 @@ pswd_list = ['about', 'after', 'again', 'below', 'could',
 def password_help():
     print("      <x><x><x><x><x> <x><x><x><x><x> ...")
     print("      Enter all letters for each position. Separate positions with spaces.")
-    print("      For maximum speed you can get away with entering as few as 3 positions.")
+    print("      For maximum speed you can get away with entering fewer positions.")
     print("      Type 'q' to quit.")
 
-def password_solve():
-    pass
-
-
+def password_solve(letters):
+    prev = list(pswd_list)
+    curr = []
+    for i in range(len(letters)):
+        curr = [p for p in prev if p[i] in letters[i]]
+        prev = curr
+    return [c.upper() for c in curr]
 
 def prompt_password():
     quit = False
@@ -44,5 +47,6 @@ def prompt_password():
             password_help()
         else:
             letters = user_input.split(' ')
+            print('  ' + ', '.join(password_solve(letters)))
         print()
     
