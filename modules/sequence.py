@@ -50,6 +50,7 @@ numBlack = 0
 toNum = {'a':0, 'b':1, 'c':2}
 
 def translate(c):
+    global numRed, numBlue, numBlack
     if len(c)!=2:
         print("  Invalid wire code!")
     else:
@@ -67,6 +68,7 @@ def sequence_help():
     pass
 
 def prompt_sequence():
+    global numRed, numBlue, numBlack
     quit = False
     while not quit:
         user_input = input("  > {0:16}".format("Wire Codes:")).strip().lower()
@@ -74,6 +76,10 @@ def prompt_sequence():
             quit = True
         elif user_input=="help":
             sequence_help()
+        elif user_input=="reset":
+            numRed = 0
+            numBlue = 0
+            numBlack = 0
         else:
             wires = [translate(c) for c in user_input.split(' ')]
             print("  " + ' '.join(wires))
