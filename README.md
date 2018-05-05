@@ -295,3 +295,17 @@ activated and probably way better than this one.
 - Type `q` to quit.
 
 ### On the Subject of Knobs
+- When the prompt appears, enter the LED codes (1 for on, 0 for off), without spaces.
+    ```
+    [MODULE] knob
+
+      > LED Codes:      1100
+      DOWN
+    ```
+- Type `help` to see what order to enter the LEDs in. You only need these 4.
+
+    | []() | []() | []() | []() | []() | []() |
+    |------|------|------|------|------|------|
+    |      |      |  2   |  3   |  4   |      |
+    |      |      |  1   |      |      |      |
+- Type `q` to quit.
