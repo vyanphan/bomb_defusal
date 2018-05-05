@@ -283,5 +283,15 @@ activated and probably way better than this one.
 ### On the Subject of Mazes
 
 ### On the Subject of Passwords
+- When the prompt appears, enter all the letters for each position, separated by spaces.
+    ```
+    [MODULE] pswd
+
+      > Letter Combos:  axtvb hijqr inglr xnwea ghlrj
+      THING
+    ```
+- You can get away with entering fewer positions; the solver will simply return more choices.
+- Type `help` to see more information about the module.
+- Type `q` to quit.
 
 ### On the Subject of Knobs

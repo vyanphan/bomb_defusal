@@ -1,20 +1,5 @@
 #!/usr/bin/env python3
 
-'''
-only need the 1st 3 positions
-
-<12345> <12345> <12345>
-pos0    pos1    pos2
-
-wordlist
-prev = wordlist
-curr = []
-
-curr = [p for p in prev if p[i] in pos<i>]
-prev = curr
-
-print prev
-'''
 pswd_list = ['about', 'after', 'again', 'below', 'could',
              'every', 'first', 'found', 'great', 'house',
              'large', 'learn', 'never', 'other', 'place',
