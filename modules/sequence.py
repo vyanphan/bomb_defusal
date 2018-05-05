@@ -65,7 +65,13 @@ def translate(c):
             return black[numBlack-1][toNum[c[1]]]
 
 def sequence_help():
-    pass
+    print("      <c><e> <c><e> <c><e>")
+    print("      For each wire, enter the color code and endpoint.")
+    print("        Red      r")
+    print("        Blue     b")
+    print("        Black    k")
+    print("      Do not space for one wire, but put spaces between separate wires.")
+    print("      Type 'q' to quit or 'reset' when restarting a new sequence module.")
 
 def prompt_sequence():
     global numRed, numBlue, numBlack
