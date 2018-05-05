@@ -16,6 +16,12 @@ prev = curr
 print prev
 '''
 
+def password_help():
+    print("      <x><x><x><x><x> <x><x><x><x><x> ...")
+    print("      Enter all letters for each position. Separate positions with spaces.")
+    print("      For maximum speed you can get away with entering as few as 3 positions.")
+    print("      Type 'q' to quit.")
+
 def prompt_password():
     pass
     
