@@ -23,5 +23,14 @@ def password_help():
     print("      Type 'q' to quit.")
 
 def prompt_password():
-    pass
+    quit = False
+    while not quit:
+        user_input = input("  > {0:16}".format("Letter Combos:")).strip().lower()
+        if user_input=="q":
+            quit = True
+        elif user_input=="help":
+            password_help()
+        else:
+            letters = user_input.split(' ')
+        print()
     
