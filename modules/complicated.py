@@ -60,9 +60,9 @@ def translate(code):
         key += search('b', code)
         key += search('*', code)
     if actions[key]():
-        return 'X'
+        return 'CUT'
     else:
-        return '_'
+        return '___'
 
 def prompt_complicated():
     quit = False
